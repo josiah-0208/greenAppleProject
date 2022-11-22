@@ -1,6 +1,18 @@
 /* 사이드바 */
 
+.container_side {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "KoPubWorldDotumBold";
+    font-size: 23px;
+    margin-bottom: 30px;
+}
+
 /* 태그 */
 .tag_title {
     margin: 10px;
+    color: #864924;
+    cursor: pointer;
 }
+
+

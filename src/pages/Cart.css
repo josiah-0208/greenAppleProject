@@ -1,0 +1,240 @@
+
+.container_cart {
+    display: flex;
+    justify-content: center;
+}
+
+.cartBox {
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.cartTitle {
+    margin-top: 20px;
+    position: relative;
+    top: 10px;
+    left: 50px;
+    font-family: "KoPubWorldDotumBold";
+    font-size: 33px;
+    letter-spacing: 2px;
+    color: rgb(139, 139, 139);
+}
+
+.cartTopBar {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    left: 30px;
+    width: 820px;
+    top: 30px;
+    font-family: "KoPubWorldDotumBold";
+    font-size: 14px;
+    letter-spacing: 2px;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1.5px solid rgb(178, 178, 178);
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px;
+    
+}
+
+#cartBarCheck {
+    position: relative;
+    right: 30px;
+}
+#cartBarImage {
+    position: relative;
+    right: 40px;
+}
+#cartBarName{
+    position: relative;
+    right: 10px;
+}
+#cartBarPrice{
+    position: relative;
+    left: 22px;
+}
+#cartBarAmount{
+    position: relative;
+    left: 29px;
+}
+#cartBarTotal{
+    position: relative;
+    left: 30px;
+}
+#cartBarDelete {
+    position: relative;
+    left: 30px;
+}
+
+.cartDetailArea {
+    position: relative;
+    top: 15px;
+    left: 15px;  
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+
+/* 장바구니 표현 부분 */
+
+.conatiner_cartdetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 850px;
+    height: 95px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+.cartDetailBox {
+    display: flex;
+    align-items: center;
+    width: 800px;
+    height: 90px;
+    border-bottom: 1px solid gray;
+    border-radius: 5px;
+}
+
+.cartDetailCheckBox {
+    position: relative;
+    left: 37px;
+}
+
+#cartCheckbox {
+    cursor: pointer;
+}
+
+
+.cartDetailFruitImageBox {
+    position: relative;
+    left: 95px;
+    width: 80px;
+    height: 80px;
+}
+
+#cartDetailFruitImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.cartDetailFruitName {
+    position: relative;
+    left: 110px;
+    width: 160px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cartDetailProductPrice {
+    position: relative;
+    left: 140px;
+}
+
+.cartDetailQuantityBox {
+    position: relative;
+    left: 175px;
+}
+
+.cartInputQuantity {
+    width: 35px;
+    height: 23px;
+    text-align: center;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: transparent;
+}
+
+.cartDetailSemiTotalPrice {
+    position: absolute;
+    right: 143px;
+}
+
+.cartDeleteImageBox {
+    width: 14px;
+    height: 14px;
+    position: relative;
+    left: 335px;
+    cursor: pointer;
+}
+
+#cartDeleteImage {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 장바구니 하단 부분 */
+
+
+.cartPageBottomArea {
+    position: relative;
+    top: 40px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.cartTotalBox {
+    position: relative;
+    bottom: 20px;
+}
+
+#cartTotalBoxFont {
+    position: relative;
+    right: 20px;
+    font-family: "KoPubWorldDotumLight";
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+
+#cartTotalBoxPrice {
+    position: relative;
+    right: 2px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 37px;
+    color: #f7511a;
+    letter-spacing: 2px
+}
+
+#cartTotalBoxWon {
+    font-family: "KoPubWorldDotumLight";
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+
+#cartOrderButton {
+    position: relative;
+    bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    width: 140px;
+    height: 50px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 21px;
+    letter-spacing: 1px;
+    color: white;
+    background-color: #864924;
+    cursor: pointer;
+}

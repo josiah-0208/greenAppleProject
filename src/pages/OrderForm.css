@@ -1,0 +1,445 @@
+.container_orderform {
+    display: flex;
+    justify-content: center;
+}
+
+.orderFormBox {
+    margin-top: 13px;
+    width: 1100px;
+    display: flex;
+    /* align-items: center; */
+    /* background-color: bisque; */
+}
+
+.orderFormTop {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 800px;
+}
+
+.orderCartTitle {
+    position: relative;
+    width: 800px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 35px;
+    letter-spacing: 1px;
+    padding-bottom: 7px;
+    color: rgb(120, 120, 120);
+    border-bottom: 1.1px solid rgb(120, 120, 120);
+    margin-bottom: 7px;
+}
+
+.orderCartCategory {
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    color: rgb(34, 34, 34);
+    letter-spacing: 1px;
+}
+
+.orderCartCategoryDetail {
+    position: relative;
+    left: 115px;
+}
+
+.orderCartCategoryPrice {
+    position: relative;
+    left: 218px;
+}
+
+.orderCartCategoryAmount {
+    position: relative;
+    left: 118px;
+}
+
+.orderCartCategoryTotalPrice {
+    position: relative;
+    left: 17px;
+}
+
+/* 카트 디테일 영역 */
+
+.container_cartdetailorder {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.cartDetailBoxOrder {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 800px;
+    height: 120px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-top: 1.1px solid rgb(120, 120, 120);
+}
+
+.cartDetailImageBoxOrder {
+    width: 100px;
+    height: 100px;
+}
+
+#cartDetailImageOrder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.cartDetailProductNameOrder {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 70px;
+    padding: 5px;
+}
+
+.cartDetailTotalOrder {
+    font-family: "KoPubWorldDotumBold";
+
+}
+
+/* 배송지 영역 */
+
+.orderFormMiddle {
+    background-color: rgb(243, 243, 243);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 27px;
+    padding-bottom: 31px;
+}
+
+.orderMemberTitle {
+    position: relative;
+    left: 58px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: rgb(100, 100, 100);
+    margin-bottom: 30px;
+}
+.orderMemberNameBox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 58px;
+    margin-bottom: 19px;
+}
+
+.orderMemberName {
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 16px;
+    color: rgb(60, 60, 60);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #bad80a;
+}
+#orderMemberNameInput {
+    position: relative;
+    bottom: 2px;
+    width: 230px;
+    height: 30px;
+    border: 1px solid gray;
+    background-color: white;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding-left: 5px;
+    border-radius: 3px;
+    margin-left: 18px;
+}
+#orderMemberNameInput:focus {
+    outline: none;
+    border: 1px solid #bad80a;
+}
+
+.orderTelEmailBox {
+    display: flex;
+    position: relative;
+    left: 58px;
+    margin-top: 1px;
+    margin-bottom: 19px;
+}
+
+.orderMemberTelBox {
+    display: flex;
+    align-items: center;
+}
+
+.orderMemberTel {
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 16px;
+    color: rgb(60, 60, 60);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #bad80a;
+}
+
+#orderMemberTelInput {
+    position: relative;
+    bottom: 2px;
+    width: 230px;
+    height: 30px;
+    border: 1px solid gray;
+    background-color: white;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding-left: 5px;
+    border-radius: 3px;
+    margin-left: 18px;
+}
+#orderMemberTelInput:focus {
+    outline: none;
+    border: 1px solid #bad80a;
+}
+
+.orderMemberEmailBox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 70px;
+}
+
+.orderMemberEmail {
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 16px;
+    color: rgb(60, 60, 60);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+#orderMemberEmailInput {
+    position: relative;
+    bottom: 2px;
+    width: 230px;
+    height: 30px;
+    border: 1px solid gray;
+    background-color: white;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-left: 18px;
+    padding-left: 5px;
+    border-radius: 3px;
+    
+}
+#orderMemberEmailInput:focus {
+    outline: none;
+    border: 1px solid #bad80a;
+}
+
+
+.orderMemberAddressBox {
+    /* 이 박스 높이를 널널하게 정해놔야 addr2가 들어와도 비율 안깨짐 */
+    position: relative;
+    left: 58px;
+    width: 700px;
+    margin-top: 1px;
+    margin-bottom: 19px;
+}
+
+.orderMemberAddressBoxTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.orderMemberAddress {
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 16px;
+    color: rgb(60, 60, 60);
+    letter-spacing: 1px;
+    border-bottom: 2px solid #bad80a;
+}
+
+#postSearchButtonOrderForm {
+    position: relative;
+    left: 148px;
+    height: 31px;
+    width: 71px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 12px;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    background-color: white;
+}
+
+#postSearchButtonOrderForm:hover {
+    opacity: 0.7;
+}
+
+.orderMemberAddressBoxBottom {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+#orderMemberAddressInput {
+    position: relative;
+    width: 292px;
+    height: 30px;
+    border: 1px solid gray;
+    background-color: white;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding-left: 5px;
+    border-radius: 3px;
+}
+
+#orderMemberAddressInput:focus {
+    outline: none;
+    border: 1px solid #bad80a;
+}
+
+.orderMemoBox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 58px;
+}
+
+.orderMemo {
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 16px;
+    color: rgb(60, 60, 60);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+#orderMemoInput {
+    position: relative;
+    bottom: 2px;
+    width: 581px;
+    height: 30px;
+    border: 1px solid gray;
+    background-color: white;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding-left: 5px;
+    border-radius: 3px;
+    margin-left: 18px;
+}
+#orderMemoInput:focus {
+    outline: none;
+    border-bottom: 1px solid #bad80a;
+}
+
+/* 결제 영역 */
+
+.orderFormBottom {
+    position: relative;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    /* justify-content: flex-end; */
+    width: 240px;
+}
+
+.orderPaymentTitle {
+    position: relative;
+    right: 3px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+
+.orderPaymentTotalBox {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.orderPaymentTotal {
+    position: relative;
+    right: 1px;
+    color: #f7511a;
+    font-family: "KoPubWorldDotumBold";
+}
+
+.orderPaymentDetailbox {
+    position: relative;
+    margin-bottom: 12px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 13px;
+    color: rgb(101, 101, 101);
+    letter-spacing: 1px;
+}
+
+.orderPaymentProductPriceBox {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.orderPaymentProductPriceTitle {
+    position: absolute;
+    right: 177px;
+}
+
+.orderPaymentProductPrice {
+    position: relative;
+    right: 5px;
+}
+
+.orderPaymentProductPriceWon {
+    position: relative;
+    right: 1px;
+}
+
+.orderPaymentExpressBox {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.orderPaymentExpress {
+    position: relative;
+    right: 157px;
+}
+
+.orderPaymentExpressPrice {
+    position: relative;
+    right: 5px;
+}
+
+.orderPaymentExpressWon {
+    position: relative;
+    right: 1px;
+}
+
+#orderPaymentButton {
+    width: 240px;
+    height: 45px;
+    background-color: #864924;
+    color: white;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 23px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

@@ -1,11 +1,245 @@
 /* 컨테이너 */
 .container_header {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 85px;
+  margin-bottom: 35px;
+  border-bottom: solid rgb(191, 191, 191) 1px;
 }
 
-/* 로고 */
+.headerLogo {
+  position: relative;
+  left: 25px;
+  font-family: "ChangwonDangamAsacBold";
+  font-size: 45px;
+  color: #bad80a;
+  cursor: pointer;
+}
 
-/* 로그인 */
 
-/* 사용자 아이콘 */
+
+/* 검색창 */
+
+.searchInputArea {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  left: 310px;
+  width: 235px;
+}
+
+#searchInput {
+  position: relative;
+  width: 185px;
+  height: 30px;
+  border: 1.2px solid rgb(160, 160, 160);
+  border-radius: 33px;
+  outline: none;
+  font-family: "KoPubWorldDotumMedium";
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: rgb(28, 28, 28);
+  padding-left: 25px;
+}
+#searchInput:focus {
+  border-color: #bad80a;
+}
+
+.loupeIconBox {
+  position: relative;
+  right: 207px;
+  width: 15px;
+  height: 15px;
+  bottom: 2px;
+  z-index: 1;
+}
+
+#loupeIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ 
+}
+
+/* 오른쪽 부분 */
+
+.headerRight {
+  width: 300px;
+  position: relative;
+  left: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 로그인&로그아웃 */
+
+.logInOutBox {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  right: 50px;
+  top: 2px;
+}
+
+#headerLogin {
+  position: relative;
+  bottom: 3px;
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: #864924;
+  border: none;
+  font-family: "KoPubWorldDotumBold";
+  margin-right: 20px;
+  border-radius: 50px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#headerJoin {
+  position: relative;
+  bottom: 3px;
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: #864924;
+  border: none;
+  font-family: "KoPubWorldDotumBold";
+  border-radius: 50px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 장바구니&사용자아이콘 */
+
+.headerUserBox {
+  display: flex;
+  justify-content: center;
+
+}
+
+.cartIconBox {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  right: 60px;
+  top: 2px;
+  cursor: pointer;
+}
+
+.cartIconImageHeader {
+  width: 30px;
+  height: 30px;
+}
+
+.userIconBox {
+  position: relative;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.userIconImage {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  scale: 1.5;
+}
+
+/* 유저아이콘&텍스트 박스 */
+.userBar_container {
+  position: absolute;
+  z-index: 1;
+  left: 107px;
+  top: 38px;
+  width: 150px;
+  height: 140px;
+}
+
+.userBar {
+  position: relative;
+  z-index: 1;
+  top: 15px;
+  width: 150px;
+  height: 130px;
+  padding: 10px;
+  background-color: #bad80a;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: "KoPubWorldDotumBold";
+}
+
+.userBarTop {
+  font-size: 16px;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+#userIcon {
+  width: 26px;
+  height: 25px;
+  position: relative;
+  left: 3px;
+}
+
+#userIconText {
+  position: relative;
+  right: 5px;
+  color: white;
+  font-family: "KoPubWorldDotumBold";
+  letter-spacing: 2px;
+}
+
+.userBarMiddle {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 4px;
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+
+#userIconText {
+  font-family: "KoPubWorldDotumBold";
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+
+#paymentIcon {
+  width: 26px;
+  height: 25px;
+  position: relative;
+  left: 3px;
+}
+
+.userBarBottom {
+  border-top: solid 1.2px white;
+  padding-top: 14px;
+  margin: 3px;
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "KoPubWorldDotumBold";
+  font-size: 16px;
+  color: rgb(18, 18, 18);
+  cursor: pointer;
+}
+
+#logout {
+  width: 26px;
+  height: 25px;
+  position: relative;
+  left: 3px;
+}
+
+#logoutText {
+  position: relative;
+  right: 4px;
+  color: white;
+  letter-spacing: 2px;
+}
