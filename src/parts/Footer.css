@@ -1,3 +1,10 @@
-.container_footer {
-    
+.containerFooter {
+    border-top: solid rgb(191, 191, 191) 1px;
+    margin-top: 35px;
+}
+
+.footerContents {
+    margin : 20px;
+    color: gray;
+    white-space: pre-line;
 }

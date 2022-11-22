@@ -1,0 +1,462 @@
+.container_view {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.viewTop {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+.titleImageBox {
+    position: relative;
+    left: 20px;
+    border-radius: 9px;
+    width: 450px;
+    height: 450px;
+}
+
+#titleImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+.detailOrderBox {
+    position: relative;
+    right: 30px;
+    top: 30px;
+    height: 440px;
+    
+}
+
+.orderBoxReviewCount {
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 13px;
+    color: rgb(87, 87, 87);
+    margin-bottom: -3px;
+}
+
+.orderBoxProductName {
+    width: 350px;
+    white-space : normal;
+    word-break:break-all;
+    word-wrap:break-word;
+    font-family: "KoPubWorldDotumBold";
+    letter-spacing: 2px;
+    font-size: 29px;
+    color: rgb(30, 30, 30)
+}
+
+.orderBoxOrigin {
+    margin-top: -4px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 21px;
+    color: rgb(87, 87, 87);
+    border-bottom: 1px solid rgb(164, 163, 163);
+    padding-bottom: 8px;
+}
+
+.orderBoxPrice {
+    position: relative;
+    top: 15px;
+    font-family: "KoPubWorldDotumBold";
+    font-size: 35px;
+    letter-spacing: 1px;
+}
+
+.orderBoxWon {
+    position: relative;
+    top: 15px;
+    left: 2px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 16px;
+}
+
+.orderBoxDelivery {
+    position: relative;
+    top: 14px;
+    font-family: "KoPubWorldDotumBold";
+    font-size: 13px;
+    color: rgb(87, 87, 87);
+}
+
+.orderCountBox {
+    position: relative;
+    top: 33px;
+    display: flex;
+    width: 350px;
+    height: 90px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgb(239, 239, 239);
+    border-radius: 5px;
+}
+.orderCountBoxProductName {
+    position: relative;
+    top: 3px;
+    left: 14px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 16px;
+}
+
+.orderBoxMiddle {
+    display: flex;
+    justify-content: space-between;
+}
+
+#inputQuantity {
+    width: 35px;
+    height: 23px;
+    text-align: center;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: transparent;
+}
+
+#buttonCountDown {
+    border: none;
+    background-color: transparent;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+#buttonCountUp {
+    border: none;
+    background-color: transparent;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.countBox {
+    position: relative;
+    left: 8px;
+    top: 5px;
+}
+
+.orderBoxTotalBox {
+    position: relative;
+    right: 20px;
+    bottom: 1px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+}
+
+#orderBoxTotal {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #f7511a;
+}
+#orderBoxTotalWon {
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+}
+
+.orderBoxBottomButton {
+    position: relative;
+    top: 60px;
+}
+
+.orderBoxCartButton {
+    width: 175px;
+    height: 40px;
+    border: none;
+    background-color: #864924;
+    color: white;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 17px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.orderBoxCartButton:active {
+    opacity: 0.5;
+}
+
+.orderBoxPaymentButton {
+    width: 175px;
+    height: 40px;
+    border: none;
+    background-color: #f7511a;
+    color: white;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 17px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.orderBoxPaymentButton:active {
+    opacity: 0.5;
+}
+
+
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* 상세정보 & 리뷰보기 버튼 */
+
+
+.viewBottom {
+    position: relative;
+    left: 30px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+.viewBottomTopButtonBox {
+    position: relative;
+}
+
+#productDetailButton {
+    background-color: transparent;
+    border: 1.1px solid gray;
+    width: 250px;
+    height: 60px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 21px;
+    letter-spacing: 2px;
+    border-top-left-radius: 9px;
+    cursor: pointer;
+}
+
+#productReviewButton {
+    background-color: transparent;
+    border: 1.1px solid gray;
+    border-left: none;
+    width: 250px;
+    height: 60px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 21px;
+    letter-spacing: 2px;
+    border-top-right-radius: 9px;
+    cursor: pointer;
+}
+
+
+/* 상품상세정보 */
+
+.container_productdetail {
+    position: relative;
+    margin-top: 30px;
+    width: 850px;
+}
+
+.productDetailTitle {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 27px;
+    letter-spacing: 1.5px;
+    color: rgb(103, 102, 102);
+    border-bottom: 2.5px rgb(103, 102, 102) solid;
+    width: 280px;
+    padding-bottom: 3px;
+    margin-bottom: 25px;
+}
+
+.productDetailDescription {
+    width: 850px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 19px;
+    letter-spacing: 2px;
+    word-break:break-all;
+    word-wrap:break-word;
+}
+
+/* .loginFormBoxTop:after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 170px;
+    opacity: 0.7;
+    border-bottom: 2.3px solid rgb(248, 248, 248);
+    top: 5px;
+  } */
+
+
+
+/* 리뷰 인서트 부분 */
+
+.insertReviewBox {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    height: 190px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(237, 237, 237);
+    border-radius: 5px;
+}
+
+.insertReviewImageAndButtonBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.insertReviewImageBox {
+    width: 145px;
+    height: 145px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.insertReviewImage {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+#researchIcon {
+    position: relative;
+    top: 5px;
+    left: 4px;
+    width: 14px;
+    height: 14px;
+}
+
+#imageUploadButton {
+    position: relative;
+    top: 3px;
+    border: none;
+    background-color: transparent;
+    font-family: "KoPubWorldDotumMedium";
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.insertReviewForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#reviewTextInput {
+    position: relative;
+    right: 30px;
+    width: 350px;
+    height: 90px;
+    background-color: transparent;
+    border-radius: 5px;
+    resize: none;
+    padding: 8px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+#reviewSubmitButton {
+    border: none;
+    border-bottom: 1px solid gray;
+    font-family: "KoPubWorldDotumBold";
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+#reviewSubmitButton:hover {
+    border-bottom: 1px solid #bad80a;
+    letter-spacing: 1px;
+}
+#reviewSubmitButton:active {
+    opacity: 0.5;
+}
+
+
+/* 리뷰 표현 부분 */
+
+.container_review {
+    position: relative;
+    top: 30px;
+    width: 700px;
+    margin-bottom: 35px;
+    
+}
+
+.container_reviewexpression {
+    display: flex;
+    border-bottom: 1px solid rgb(152, 152, 152);
+    margin-top: 15px;
+    
+}
+
+.reviewExpressionLeftArea {
+    height: 145px;
+}
+
+.reviewExpressionReviewId {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 17px;
+}
+
+.reviewExpressionReviewDate {
+    margin-top: -6px;
+    margin-bottom: 5px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 12px;
+}
+
+.reviewImageBox {
+    width: 90px;
+    height: 90px;
+}
+
+#reviewImages {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20%;
+}
+
+.reviewExpressionContent {
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 15px;
+    letter-spacing: 1px;
+    position: relative;
+    left: 30px;
+    top: 7px;
+    width: 520px;
+    height: 140px;
+    word-break:break-all;
+    word-wrap:break-word;
+}
+
+.userChkArea {
+    display: flex;
+}
+
+.reviewExpressionUpdateBox {
+    position: relative;
+    left: 30px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 13px;
+    color: rgb(68, 68, 68);
+    cursor: pointer;
+}
+
+.reviewExpressiondeleteBox {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    left: 40px;
+    cursor: pointer;
+}
+
+#trashBinIcon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -1,0 +1,398 @@
+.container_myorder {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.myOrderBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+    
+}
+
+.myOrderTtile {
+    position: relative;
+    width: 900px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 29px;
+    letter-spacing: 2px;
+    color: rgb(101, 101, 101);
+    padding-bottom: 3px;
+    border-bottom: 1.4px solid rgb(101, 101, 101);
+    margin-bottom: 23px;
+}
+
+/* 주문 큰 내역 영역 */
+
+.container_myorderobject {
+    display: flex;
+    justify-content: center;
+}
+
+.myOrderObjectBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.myOrderObjectContainer {
+    width: 900px;
+    border: 2px solid rgb(90, 90, 90);
+    border-radius: 5px;
+    padding-bottom: 11px;
+    margin-bottom: 17px;
+}
+
+.myOrderObjectContainerTop {
+    display: flex;
+    flex-direction: column;
+    font-family: "KoPubWorldDotumBold";
+    font-size: 16px;
+    color: rgb(90, 90, 90);
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgb(90, 90, 90);
+    padding-top: 6px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+    margin-bottom: 18px;
+}
+
+.myOrderObjectContainerRealTop {
+    display: flex;
+}
+
+.close {
+    position: relative;
+    left: 745px;
+    width: 25px;
+    height: 25px;
+}
+.open {
+    position: relative;
+    left: 745px;
+    width: 25px;
+    height: 25px;
+}
+.close img {
+    transform: rotate(180deg);
+}
+
+#myOrderToggleButton {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#myOrderToggleButton:hover {
+    opacity: 0.5;
+}
+#myOrderToggleButton:active {
+    opacity: 0.3;
+}
+
+
+.orderDetailState {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* 주문 개별 디테일 화면 */
+
+
+
+.container_myorderdetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myOrderDetailBox {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 860px;
+    height: 130px;
+    background-color: rgb(242, 242, 242);
+    border-radius: 11px;
+    margin-bottom: 9px;
+}
+
+.myOrderDetailImageBox {
+    width: 110px;
+    height: 110px;
+}
+#myOrderDetailImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.myOrderDetailMiddle {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myOrderDetailName {
+    position: relative;
+    top: 7px;
+    right: 10px;
+    width: 320px;
+    height: 50px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 3px;
+    word-break:break-all;
+    word-wrap:break-word;
+}
+
+.myOrderDetailMiddleBottom {
+    position: relative;
+    bottom: 6px;
+    right: 9px;
+    display: flex;
+    width: 320px;
+}
+
+.myOrderDetailPrice {
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgb(101, 101, 101);
+}
+
+.myOrderDetailAmount {
+    position: relative;
+    left: 50px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgb(101, 101, 101);
+}
+
+
+.myOrderDetailBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 130px;
+}
+
+.myOrderDetailState {
+    position: relative;
+    top: 3px;
+    font-family: "KoPubWorldDotumBold";
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: rgb(64, 64, 64);
+}
+
+.myOrderDetailButton {
+    position: relative;
+    bottom: 8px;
+    width: 145px;
+    height: 30px;
+    background-color: transparent;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: 1.1px solid #f7511a;
+    border-radius: 5px;
+    color: #f7511a;;
+    cursor: pointer;
+}
+.myOrderDetailButton:hover {
+    opacity: 0.8;
+}
+.myOrderDetailButton:active {
+    opacity: 0.3;
+}
+
+/* 주문 상세내역 눌렀을 때 뜨는 화면 */
+.container_orderdetaildescribe {
+    display: flex;
+    justify-content: center;
+}
+
+.orderDetailDescribeBox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.orderDetailDescribeTop {
+    display: flex;
+    align-items: center;
+    width: 860px;
+    margin-bottom: 4px;
+}
+
+.orderDetailDescribeTopTitle {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribeTopOrderId {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribeMiddle {
+    display: flex;
+}
+
+.orderDetailDescribeFirstArea {
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+}
+
+.orderDetailDescribeOrderNameBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.orderDetailDescribeOrderNameTitle {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribeOrderName {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribeTelBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.orderDetailDescribeTelTitle {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribeTel {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribeAddressBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.orderDetailDescribeAddressTitle {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribeAddress {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribeMemoBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.orderDetailDescribeMemoTitle {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribeMemo {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribeSecondArea {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 240px;
+    border-left: 1.4px solid gray;
+    border-right: 1.4px solid gray;
+}
+
+.orderDetailDescribeAmountBox {
+    display: flex;
+    justify-content: center;
+}
+.orderDetailDescribeAmountTitle {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.orderDetailDescribeAmount {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribePayMoneyBox {
+    display: flex;
+    justify-content: center;
+}
+
+.orderDetailDescribePayMoneyTitle {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.orderDetailDescribePayMoney {
+    font-family: "KoPubWorldDotumBold";
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.orderDetailDescribeThirdArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 220px;
+}
+.orderDetailDescribeDeleteButton {
+    width: 90px;
+    height: 28px;
+    color: gray;
+    font-family: "KoPubWorldDotumBold";
+    font-size: 13px;
+    letter-spacing: 1.7px;
+    background-color: transparent;
+    border: 1.7px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.orderDetailDescribeDeleteButton:hover {
+    opacity: 0.7;
+}
+.orderDetailDescribeDeleteButton:active {
+    opacity: 0.3;
+}

@@ -1,0 +1,72 @@
+
+.container_deleteChk {
+    display: flex;
+    justify-content: center;
+}
+
+.deleteFormBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 400px;
+}
+
+.deleteForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deleteTitle1 {
+    position: relative;
+    right: 47px;
+    white-space: pre-line;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 29px;
+    color: rgb(86, 86, 86)
+
+}
+
+.deleteTitle2 {
+    position: relative;
+    right: 25px;
+    white-space: pre-line;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 24px;
+    color: rgb(86, 86, 86)
+}
+
+.passwordInputDelete {
+    width: 290px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1.8px solid gray;
+    border-color: #864924;
+}
+
+.passwordInputDelete:hover {
+    border-color: #bad80a;
+}
+
+#deleteFormButton {
+    display: block;
+    background-color: transparent;
+    color: gray;
+    border: none;
+    border-bottom: 1.7px solid rgb(86, 86, 86);
+    height: 30px;
+    width: 65px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 15px;
+    color: rgb(86, 86, 86);
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#deleteFormButton:active {
+    opacity: 0.5;
+}

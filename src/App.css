@@ -1,4 +1,82 @@
 /* 사이드바 */
 .container_middle {
   display: flex;
+  flex-direction: column;
+}
+
+.container_includeSide {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 최근 본 */
+
+.container_watchedbox {
+  position: absolute;
+  top: 170px;
+  right: 15px;
+}
+
+.watchedBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background-color: #bad80a;
+  border-radius: 7px;
+}
+
+.watchedBoxTitle {
+  font-family: "KoPubWorldDotumBold";
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: white;
+  padding-bottom: 5px;
+}
+
+.watchedImageBox {
+  width: 50px;
+  height: 50px;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+#watchedImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* 폰트 */
+
+@font-face {
+  font-family: "DalseoHealingMedium";
+  src: url("./fonts/DalseoHealingMedium.ttf") format('truetype');
+}
+@font-face {
+  font-family: "DalseoDarling";
+  src: url("./fonts/DalseoDarling.ttf") format('truetype');
+}
+@font-face {
+  font-family: "KoPubWorldDotumBold";
+  src: url("./fonts/KoPubWorldDotumBold.ttf") format('truetype');
+}
+@font-face {
+  font-family: "KoPubWorldDotumLight";
+  src: url("./fonts/KoPubWorldDotumLight.ttf") format('truetype');
+}
+@font-face {
+  font-family: "KoPubWorldDotumMedium";
+  src: url("./fonts/KoPubWorldDotumMedium.ttf") format('truetype');
+}
+@font-face {
+  font-family: "116watermelon";
+  src: url("./fonts/116watermelon.ttf") format('truetype');
+}
+@font-face {
+  font-family: "ChangwonDangamAsacBold";
+  src: url("./fonts/ChangwonDangamAsacBold.ttf") format('truetype');
 }

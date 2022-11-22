@@ -1,0 +1,192 @@
+.container_update {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.updateBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 700px;
+    border-left: 1.4px solid rgb(177, 177, 177);
+    border-right: 1.4px solid rgb(177, 177, 177);
+}
+
+.updateTitle {
+    font-family: "KoPubWorldDotumBold";
+    top: 20px;
+    font-size: 30px;
+    letter-spacing: 4px;
+    color: rgb(142, 142, 142);
+    position: relative;
+    opacity: 0.8;
+}
+
+.updateForm {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 40px;
+    width: 300px;
+
+}
+.nameBox {
+}
+
+#nameLabel {
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 23px;
+    color: rgb(139, 139, 139);
+    border-bottom: 1.5px solid rgb(86, 86, 86);
+    width: 60px;
+}
+
+#userName {
+    font-size: 19px;
+    position: relative;
+    top: 11px;
+    font-weight: 550;
+}
+
+.idBox {
+    position: relative;
+    top: 35px;
+}
+
+#idLabel {
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 21px;
+    color: rgb(139, 139, 139);
+    border-bottom: 1.5px solid rgb(86, 86, 86);
+    width: 75px;
+}
+
+#userId {
+    font-size: 19px;
+    position: relative;
+    top: 11px;
+    font-weight: 550;
+}
+
+.passwordBox {
+    position: relative;
+    top: 70px;
+}
+#passwordLabel {
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 21px;
+    color: rgb(139, 139, 139);
+    border-bottom: 1.5px solid rgb(86, 86, 86);
+    width: 90px;
+}
+#passwordInput {
+    position: relative;
+    top: 11px;
+    width: 310px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.telBox {
+    position: relative;
+    top: 110px;
+}
+#telLabel {
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 21px;
+    color: rgb(139, 139, 139);
+    border-bottom: 1.5px solid rgb(86, 86, 86);
+    width: 90px;
+}
+
+#telInput {
+    position: relative;
+    top: 11px;
+    width: 310px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.postBoxUpdate {
+    position: relative;
+    top: 154px;
+}
+
+#addressLabel {
+    position: relative;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 21px;
+    color: rgb(139, 139, 139);
+    border-bottom: 1.5px solid rgb(86, 86, 86);
+    width: 60px;
+}
+
+#postSearchButtonUpdate {
+    position: relative;
+    left: 205px;
+    font-size: 13px;
+    color: rgb(31, 31, 31);
+    height: 35px;
+    width: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.postPopUpUpdatePage {
+    position: relative;
+    bottom: 350px;
+    right: 145px;
+}
+
+#addressInput {
+    position: relative;
+    top: 11px;
+    width: 310px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.updateFormBottom {
+    position: relative;
+    top: 210px;
+    left: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.updateButton {
+    width: 120px;
+    height: 45px;
+    border-radius: 7px;
+    border: none;
+    background-color: #864924;
+    color: white;
+    font-size: 17px;
+    font-family: "KoPubWorldDotumBold";
+    cursor: pointer;
+}
+.updateButton:active {
+    opacity: 0.5;
+}
+
+.deleteButton {
+    width: 120px;
+    height: 45px;
+    border-radius: 7px;
+    border: none;
+    background-color: #864924;
+    color: white;
+    font-size: 17px;
+    font-family: "KoPubWorldDotumBold";
+    cursor: pointer;
+}
