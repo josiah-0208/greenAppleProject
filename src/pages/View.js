@@ -291,14 +291,16 @@ function ImageFile(props) {
     }
 
     const onSubmit = (e) => {
-
+        
         e.preventDefault();
         console.log(props.updateState)
         if (props.updateState === 1) {
-
+            
             let formData = new FormData();
-            formData.append("file", e.target.imageInput.files[0]);
-            formData.append("productCode", JSON.stringify(props.productCode));
+            for(let i=0; i<e.target.imageInput.files.length; i++) {
+                formData.append("files", e.target.imageInput.files[i]);
+            }
+            formData.append("productCode", props.productCode);
             formData.append("content", reduxstate.updateReviewText);
 
             axios({
@@ -311,12 +313,16 @@ function ImageFile(props) {
                 },
             })
                 .then(response => {
-                    if (response.data === 1) {
+                    console.log(response.data);
+                    if (response.data === 1 || response.data === 2) {
                         dispatch(changeUpdateReviewText(""));
                         setFileImage("/icons/previewPhoto.png");
                         document.getElementById("reviewTextInput").value = ""
-                        props.setReviewListOnChange(props.reviewListOnChange + 1);
-                        dispatch(changeReviewListState(!reduxstate.reviewListState));
+                        setTimeout(() => {
+                            props.setReviewListOnChange(props.reviewListOnChange + 1);
+                        }, 500)
+                        // props.setReviewListOnChange(props.reviewListOnChange + 1);
+                        // dispatch(changeReviewListState(!reduxstate.reviewListState));
                     }
                 })
                 .catch(error => {
@@ -325,10 +331,14 @@ function ImageFile(props) {
         } else if (props.updateState === 0) {
 
             let formData = new FormData();
-            formData.append("file", e.target.imageInput.files[0]);
-            formData.append("productCode", JSON.stringify(props.productCode));
+            for(let i=0; i<e.target.imageInput.files.length; i++) {
+                formData.append("files", e.target.imageInput.files[i]);
+            }
+            formData.append("productCode", props.productCode);
             formData.append("content", reduxstate.updateReviewText);
             formData.append("reviewId", reduxstate.updateReviewId);
+            console.log(formData);
+
             axios({
                 url: '/review/update',
                 method: "POST",
@@ -337,15 +347,17 @@ function ImageFile(props) {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
-            }).then(response => {
+            }).then((response) => {
                 console.log("responsedata" + response.data)
                 if (response.data === 1) {
                     dispatch(changeUpdateReviewText(""));
                     setFileImage("/icons/previewPhoto.png");
                     document.getElementById("reviewTextInput").value = ""
-                    props.setReviewListOnChange(props.reviewListOnChange + 1);
+                    setTimeout(() => {
+                        props.setReviewListOnChange(props.reviewListOnChange + 1);
+                    }, 500)
                     dispatch(changeReviewId(""));
-                    dispatch(changeReviewListState(!reduxstate.reviewListState))
+                    // dispatch(changeReviewListState(!reduxstate.reviewListState))
                 }
             })
                 .catch(error => {
@@ -368,7 +380,7 @@ function ImageFile(props) {
                 </div>
                 <form onSubmit={onSubmit} className="insertReviewForm">
                     <input type="file" style={{ display: "none" }} ref={inputTag}
-                        name="imageInput" onChange={previewImage} multiple="multiple" />
+                        name="imageInput" onChange={previewImage} multiple />
                     <textarea type="text" placeholder="짧은 한마디를 남겨주세요." required
                         onClick={() => {
                             if (localStorage.getItem("id") === null) {
@@ -407,7 +419,9 @@ function ReviewExpression(props) {
             }
         })
             .then((response) => {
-                setFileName(response.data[0].fileName)
+                if (response.data[0] !== undefined) {
+                    setFileName(response.data[0].fileName)
+                }
             })
     }, [props.review.reviewId])
 
@@ -425,7 +439,8 @@ function ReviewExpression(props) {
                 <div className="reviewExpressionReviewId">{props.review.id}</div>
                 <div className="reviewExpressionReviewDate">{props.review.reviewDate}</div>
                 <div className="reviewImageBox">
-                    <img src={"http://localhost:8080/rvImages/" + fileName} alt=""
+                    <img src={ fileName === "" ? "/icons/userIcon_Bear.png" : 
+                    "http://localhost:8080/rvImages/" + fileName} alt=""
                         id="reviewImages"></img>
                 </div>
             </div>
