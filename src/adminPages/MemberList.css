@@ -1,0 +1,10 @@
+.container_memberlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.memberListDetailBox {
+    display: flex;
+    justify-content: center;
+}
