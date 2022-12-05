@@ -198,6 +198,20 @@ let loginModalState = createSlice({
 
 export let { changeLoginModalState } = loginModalState.actions;
 
+
+const searchEnterState = createSlice({
+    name: "searchEnterState",
+    initialState: 0,
+    reducers: {
+        changeSearchEnterState(state, action) {
+            state = action.payload;
+            return state;
+        }
+    }
+})
+
+export let { changeSearchEnterState } = searchEnterState.actions;
+
 export default configureStore({
     reducer: {
         loginState: loginState.reducer,
@@ -213,5 +227,6 @@ export default configureStore({
         orderFormTotalPrice: orderFormTotalPrice.reducer,
         cartTotalReduxState: cartTotalReduxState.reducer,
         loginModalState: loginModalState.reducer,
+        searchEnterState: searchEnterState.reducer,
     }
 })

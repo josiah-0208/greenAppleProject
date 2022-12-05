@@ -16,7 +16,7 @@ import axios from 'axios';
 import OrderForm from './pages/OrderForm';
 import MyOrder from './pages/MyOrder';
 import ProductInsert from './adminPages/ProductInsert';
-import MemberList from './adminPages/MemberList';
+import Admin from './adminPages/Admin';
 
 function App() {
 
@@ -70,7 +70,7 @@ function App() {
           <Route path="/order" element={<OrderForm />} />
           <Route path="/myOrder" element={<MyOrder />} />
           <Route path="/productInsert" element={<ProductInsert />} />
-          <Route path="/memberList" element={<MemberList />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </div>
       <Footer />

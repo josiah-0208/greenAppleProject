@@ -151,20 +151,28 @@ function View() {
                             <div className="countBox">
                                 <button onClick={(e) => {
                                     e.preventDefault();
-                                    setQuantity(quantity - 1)
-                                    document.getElementById("inputQuantity").value = quantity - 1
+                                    if(quantity > 1) {
+                                        setQuantity(quantity - 1)
+                                        document.getElementById("inputQuantity").value = quantity - 1
+                                    }
                                 }} id="buttonCountDown">-</button>
                                 <input type="number" defaultValue={quantity} onChange={(e) => {
-                                    setQuantity(e.target.value)
+                                    if(e.target.value < 0 || e.target.value === "0") {
+                                        alert("1개 이상 선택해주세요.")
+                                        setQuantity(1)
+                                        document.getElementById("inputQuantity").value = 1;
+                                    } else {
+                                        setQuantity(parseInt(e.target.value))
+                                    }
                                 }} min="0" id="inputQuantity" />
                                 <button onClick={(e) => {
                                     e.preventDefault();
-                                    setQuantity(quantity + 1)
+                                    setQuantity(parseInt(quantity)+1)
                                     document.getElementById("inputQuantity").value = quantity + 1
                                 }} id="buttonCountUp">+</button>
                             </div>
                             <div className="orderBoxTotalBox">
-                                합계: <span id="orderBoxTotal">{totalPrice}</span>
+                                합계: <span id="orderBoxTotal">{isNaN(parseInt(totalPrice))?0:totalPrice}</span>
                                 <span id="orderBoxTotalWon">원</span>
                             </div>
                         </div>
@@ -293,7 +301,6 @@ function ImageFile(props) {
     const onSubmit = (e) => {
         
         e.preventDefault();
-        console.log(props.updateState)
         if (props.updateState === 1) {
             
             let formData = new FormData();
@@ -349,7 +356,7 @@ function ImageFile(props) {
                 },
             }).then((response) => {
                 console.log("responsedata" + response.data)
-                if (response.data === 1) {
+                if (response.data === 1 || response.data === 2) {
                     dispatch(changeUpdateReviewText(""));
                     setFileImage("/icons/previewPhoto.png");
                     document.getElementById("reviewTextInput").value = ""
@@ -408,22 +415,7 @@ function ReviewExpression(props) {
 
     let reduxstate = useSelector((state) => { return state })
     let dispatch = useDispatch();
-    const [fileName, setFileName] = useState("");
     const [userChkState, setUserChkState] = useState(0);
-
-
-    useEffect(() => {
-        axios.get("/review/imgList", {
-            params: {
-                reviewId: props.review.reviewId,
-            }
-        })
-            .then((response) => {
-                if (response.data[0] !== undefined) {
-                    setFileName(response.data[0].fileName)
-                }
-            })
-    }, [props.review.reviewId])
 
     useEffect(() => {
         if (localStorage.getItem('id') === props.review.id) {
@@ -439,8 +431,9 @@ function ReviewExpression(props) {
                 <div className="reviewExpressionReviewId">{props.review.id}</div>
                 <div className="reviewExpressionReviewDate">{props.review.reviewDate}</div>
                 <div className="reviewImageBox">
-                    <img src={ fileName === "" ? "/icons/userIcon_Bear.png" : 
-                    "http://localhost:8080/rvImages/" + fileName} alt=""
+                    <img src={ props.review.fileName === "" || props.review.fileName === "n" 
+                    ? "/icons/userIcon_Bear.png" : 
+                    "http://localhost:8080/rvImages/" + props.review.fileName} alt=""
                         id="reviewImages"></img>
                 </div>
             </div>
