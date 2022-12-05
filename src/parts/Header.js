@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import LoginPage from "./../pages/LoginPage.js"
 import axios from "axios";
-import { changeHeaderOnClickState, changeKeyword, changeLoginModalState, changeLoginState } from "../store";
+import { changeHeaderOnClickState, changeKeyword, changeLoginModalState, changeLoginState, changeSearchEnterState } from "../store";
 
 function Header(props) {
     let navigate = useNavigate();
@@ -25,8 +25,9 @@ function Header(props) {
             </div>
             <div className="searchInputArea">
                 <input type="text" onKeyDown={(e) => {
-                    if(e.key === "Enter") {
+                    if(e.key === "Enter") { 
                         dispatch(changeKeyword(e.target.value))
+                        dispatch(changeSearchEnterState(reduxState.searchEnterState + 1))
                         navigate('/')
                         sessionStorage.setItem('tab', 'all');
                     }

@@ -14,7 +14,8 @@ function Cart() {
 
     let [carts, setCarts] = useState([]);
     let [cartListState, setCartListState] = useState(0);
-
+    const [cartTotalPriceState, setCartTotalPriceState] = useState(0);
+    const [cartDetailPriceArr, setCartDetailPriceArr] = useState([]);
     useEffect(() => {
         axios.get("/cart")
             .then((response) => {
@@ -26,7 +27,7 @@ function Cart() {
     }, [cartListState])
 
     // 데이터를 어떻게 다룰지 정하고
-    
+
     // const orderOnclick = () => {
     //     // sessionStorage.setItem
     // }
@@ -34,6 +35,13 @@ function Cart() {
     useEffect(() => {
         dispatch(changeCartTotalReduxStateReset());
     }, [])
+
+    // useEffect(() => {
+    //     console.log(reduxState.cartDetailPriceArr)
+    //     setCartTotalPriceState(reduxState.cartDetailPriceArr.reduce((acc, cur) => {
+    //         return acc + cur;
+    //     }))
+    // }, [reduxState.cartDetailPriceArr])
 
     return (
         <div className="container_cart">
@@ -79,21 +87,26 @@ function Cart() {
                 <div className="cartPageBottomArea">
                     <div className="cartTotalBox">
                         <span id="cartTotalBoxFont">
-                            총 합계: 
+                            총 합계:
                         </span>
                         <span id="cartTotalBoxPrice">
                             {reduxState.cartTotalReduxState.toLocaleString('ko-KR')}
                         </span>
                         <span id="cartTotalBoxWon">
-                            원
+                            원{cartTotalPriceState}
                         </span>
                     </div>
                     <div>
                         <button id="cartOrderButton" onClick={() => {
-                            navigate("/order");
-                            // 바로구매에 대한 세션스토리지 삭제
-                            sessionStorage.removeItem("productCodeNowOrder");
-                            sessionStorage.removeItem("amount");
+                            console.log(carts)
+                            if (carts.length === 0) {
+                                alert("장바구니가 비었습니다.")
+                            } else {
+                                navigate("/order");
+                                // 바로구매에 대한 세션스토리지 삭제
+                                sessionStorage.removeItem("productCodeNowOrder");
+                                sessionStorage.removeItem("amount");
+                            }
                         }}>
                             주문하기
                         </button>
@@ -125,10 +138,10 @@ function CartDetail(props) {
             setIsChecked(true);
         }
     }
-    
 
     useEffect(() => {
         if (isChecked === 1 || isChecked === true) {
+            console.log(props.i)
             dispatch(changeCartTotalReduxStatePlus(semiTotalPrice))
             setChecked(1)
             let body = {
@@ -137,8 +150,8 @@ function CartDetail(props) {
                 checkStatus: 1,
             }
             axios.post("/cart/update", body)
-            .then((response) => {
-            })
+                .then((response) => {
+                })
         } else if (isChecked === false) {
             dispatch(changeCartTotalReduxStateMinus(semiTotalPrice))
             let body = {
@@ -147,8 +160,8 @@ function CartDetail(props) {
                 checkStatus: 0,
             }
             axios.post("/cart/update", body)
-            .then((response) => {
-            })
+                .then((response) => {
+                })
         }
     }, [isChecked])
 
@@ -161,38 +174,48 @@ function CartDetail(props) {
     const setServerQuantityUp = () => {
         let body = {
             cartNo: props.cart.cartNo,
-            amount: quantity+1,
+            amount: quantity + 1,
             checkStatus: checked,
         }
         axios.post("/cart/update", body)
-        .then((response) => {
-            console.log(response)
-        })
+            .then((response) => {
+                console.log(response)
+            })
     }
     const setServerQuantityDown = () => {
         let body = {
             cartNo: props.cart.cartNo,
-            amount: quantity-1,
+            amount: quantity - 1,
             checkStatus: checked,
         }
         axios.post("/cart/update", body)
-        .then((response) => {
-        })
-    } 
+            .then((response) => {
+            })
+    }
+    const setServerQuantityOne = () => {
+        let body = {
+            cartNo: props.cart.cartNo,
+            amount: 1,
+            checkStatus: checked,
+        }
+        axios.post("/cart/update", body)
+            .then((response) => {
+            })
+    }
 
     const cartDelete = () => {
         axios.get("/cart/delete", {
-            params : {
+            params: {
                 cartNo: props.cart.cartNo,
             }
         }
         )
-        .then((response) => {
-            props.setCartListState(props.cartListState+1);
-            if (isChecked === 1 || isChecked === true) {
-                dispatch(changeCartTotalReduxStateMinus(semiTotalPrice))
-            }
-        })
+            .then((response) => {
+                props.setCartListState(props.cartListState + 1);
+                if (isChecked === 1 || isChecked === true) {
+                    dispatch(changeCartTotalReduxStateMinus(semiTotalPrice))
+                }
+            })
     }
 
 
@@ -201,9 +224,9 @@ function CartDetail(props) {
         <div className="conatiner_cartdetail">
             <div className="cartDetailBox">
                 <div className="cartDetailCheckBox">
-                    <input type="checkbox" checked={isChecked} onChange={checkboxOnchange} 
-                    id="cartCheckbox"/>
-                </div> 
+                    <input type="checkbox" checked={isChecked} onChange={checkboxOnchange}
+                        id="cartCheckbox" />
+                </div>
                 <div className="cartDetailFruitImageBox">
                     <img src={"/fruits/" + props.cart.thumbnail} alt="" id="cartDetailFruitImage" />
                 </div>
@@ -216,16 +239,24 @@ function CartDetail(props) {
                 <div className="cartDetailQuantityBox">
                     <button onClick={(e) => {
                         e.preventDefault();
-                        setQuantity(quantity - 1)
-                        document.getElementById("inputQuantity" + props.i).value = quantity - 1;
-                        setServerQuantityDown();
-                        if (isChecked === true) {
-                            console.log("안돼?")
-                            dispatch(changeCartTotalReduxStateMinus(props.cart.price))
+                        if (quantity > 1) {
+                            setQuantity(quantity - 1)
+                            document.getElementById("inputQuantity" + props.i).value = quantity - 1;
+                            setServerQuantityDown();
+                            if (isChecked === true) {
+                                dispatch(changeCartTotalReduxStateMinus(props.cart.price))
+                            }
                         }
                     }} id="buttonCountDown">-</button>
                     <input type="number" defaultValue={props.cart.amount} onChange={(e) => {
-                        setQuantity(e.target.value)
+                        if (e.target.value < 0 || e.target.value === "0") {
+                            alert("1개 이상 선택해주세요.")
+                            setQuantity(1)
+                            document.getElementById("inputQuantity" + props.i).value = 1;
+                            setServerQuantityOne();
+                        } else {
+                            setQuantity(parseInt(e.target.value))
+                        }
                     }} min="0" id={"inputQuantity" + props.i} className="cartInputQuantity" />
                     <button onClick={(e) => {
                         e.preventDefault();
@@ -238,12 +269,12 @@ function CartDetail(props) {
                     }} id="buttonCountUp">+</button>
                 </div>
                 <div className="cartDetailSemiTotalPrice">
-                    {semiTotalPrice.toLocaleString('ko-KR')}원
+                    {isNaN(parseInt(semiTotalPrice)) ? 0 : semiTotalPrice.toLocaleString('ko-KR')}원
                 </div>
                 <div className="cartDeleteImageBox" onClick={cartDelete}>
                     <img src="/icons/trashBin.png" alt="" id="cartDeleteImage" />
                 </div>
-                
+
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { changeSearchEnterState } from "../store";
 import "./Side.css";
 
 function Side(props) {
@@ -21,7 +22,7 @@ function Side(props) {
         } else {
             setTagColor(["#864924","#864924","#864924","#864924"])
         }
-    }, [reduxstate.headerOnClickState, reduxstate.keyword])
+    }, [reduxstate.headerOnClickState, reduxstate.keyword, reduxstate.searchEnterState])
     
 
     return (
@@ -40,6 +41,8 @@ function Side(props) {
 function Tag(props) {
 
     let navigate = useNavigate();
+    let dispatch = useDispatch();
+    let reduxState = useSelector((state) => { return state })
 
     let tagName = ""
     if (props.tagName === "봄") {
@@ -61,6 +64,7 @@ function Tag(props) {
                 navigate('/'+tagName)
                 props.setTagState(props.index);
                 sessionStorage.setItem('tab',props.index)
+                dispatch(changeSearchEnterState(0));
             }} style={{color: props.tagColor[props.index]}}>
                 {props.tagName}
             </span>

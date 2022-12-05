@@ -63,7 +63,7 @@ function Contents(props) {
                 })
         }
         setLoading(false);
-    }, [page, reduxState.keyword, props.tagState])
+    }, [page, reduxState.keyword, props.tagState, reduxState.searchEnterState])
 
 
     useEffect(() => {
