@@ -93,7 +93,7 @@ function Cart() {
                             {reduxState.cartTotalReduxState.toLocaleString('ko-KR')}
                         </span>
                         <span id="cartTotalBoxWon">
-                            원{cartTotalPriceState}
+                            원
                         </span>
                     </div>
                     <div>
@@ -202,6 +202,16 @@ function CartDetail(props) {
             .then((response) => {
             })
     }
+    const setServerQuantity = (qunatityEnter) => {
+        let body = {
+            cartNo: props.cart.cartNo,
+            amount: qunatityEnter,
+            checkStatus: checked,
+        }
+        axios.post("/cart/update", body)
+            .then((response) => {
+            })
+    }
 
     const cartDelete = () => {
         axios.get("/cart/delete", {
@@ -228,7 +238,7 @@ function CartDetail(props) {
                         id="cartCheckbox" />
                 </div>
                 <div className="cartDetailFruitImageBox">
-                    <img src={"/fruits/" + props.cart.thumbnail} alt="" id="cartDetailFruitImage" />
+                    <img src={"http://localhost:8080/pdImages/" + props.cart.thumbnail} alt="" id="cartDetailFruitImage" />
                 </div>
                 <div className="cartDetailFruitName">
                     {props.cart.productName}
@@ -248,14 +258,23 @@ function CartDetail(props) {
                             }
                         }
                     }} id="buttonCountDown">-</button>
-                    <input type="number" defaultValue={props.cart.amount} onChange={(e) => {
-                        if (e.target.value < 0 || e.target.value === "0") {
-                            alert("1개 이상 선택해주세요.")
-                            setQuantity(1)
-                            document.getElementById("inputQuantity" + props.i).value = 1;
-                            setServerQuantityOne();
-                        } else {
-                            setQuantity(parseInt(e.target.value))
+                    <input type="number" defaultValue={props.cart.amount} onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            if (e.target.value < 0 || e.target.value === "0") {
+                                alert("1개 이상 선택해주세요.")
+                                setQuantity(1)
+                                document.getElementById("inputQuantity" + props.i).value = 1;
+                                setServerQuantityOne();
+                                dispatch(changeCartTotalReduxStatePlus((1*props.cart.price)-(quantity*props.cart.price)))
+                            } else {
+                                setQuantity(parseInt(e.target.value))
+                                setServerQuantity(e.target.value);
+                                if (isChecked === 1 || isChecked === true) {
+                                    console.log(e.target.value*props.cart.price)
+                                    console.log(quantity*props.cart.price)
+                                    dispatch(changeCartTotalReduxStatePlus((e.target.value*props.cart.price)-(quantity*props.cart.price)))
+                                }
+                            }
                         }
                     }} min="0" id={"inputQuantity" + props.i} className="cartInputQuantity" />
                     <button onClick={(e) => {

@@ -2,6 +2,7 @@ import { useState } from "react"
 import MemberList from "./MemberList";
 import "./Admin.css"
 import ReviewList from "./ReviewList";
+import ProductList from "./ProductList";
 
 function Admin() {
 
@@ -30,6 +31,9 @@ function Admin() {
             </div>
             <div className="adminContentArea">
                 {/* 여기에 이제 텝에 따라서 내용물 비추자 */}
+                {
+                    adminTabState === 0 && <ProductList />
+                }
                 {
                     adminTabState === 1 && <MemberList />
                 }

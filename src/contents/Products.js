@@ -53,7 +53,7 @@ function Products(props) {
             sessionStorage.setItem('productCode', props.fruit.productCode)
         }}>
             <div className="imageThumbnailBox">
-                <img className="imageThumbnail" src={"/fruits/" + props.fruit.thumbnail} alt=""
+                <img className="imageThumbnail" src={"http://localhost:8080/pdImages/" + props.fruit.thumbnail} alt=""
                     onMouseEnter={() => { setImageThumbnailBoxBottom(1) }}
                     onMouseLeave={() => { setImageThumbnailBoxBottom(0) }} />
                 {

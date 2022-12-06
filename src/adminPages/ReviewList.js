@@ -1,8 +1,25 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function ReviewList() {
 
+    
     const [reviewList, setReviewList] = useState([]);
+
+    
+    useEffect(() => {
+        axios.get("/admin/reviewList", {
+            params: {
+                keyword: "",
+                tag: "name",
+                pageNum: "1"
+            }
+        })
+            .then((res) => {
+                console.log(res.data);
+                setReviewList(res.data);
+            })
+    }, [])
 
     return (
         <div className="container_reviewlist">
@@ -14,10 +31,9 @@ function ReviewList() {
                     <div className="reviewListSearchArea">
                         <div>
                             <select>
-                                <option>이름</option>
+                                <option>구매상품</option>
                                 <option>아이디</option>
-                                <option>전화번호</option>
-                                <option>주소</option>
+                                <option>내용</option>
                             </select>
                         </div>
                         <div>
@@ -75,8 +91,8 @@ function ReviewListDetail(props) {
     return (
         <tr>
             <td>
-                <div>
-                    
+                <div className="reviewListDetailNo">
+
                 </div>
             </td>
         </tr>

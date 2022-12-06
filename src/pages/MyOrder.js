@@ -134,7 +134,7 @@ function MyorderDetailObject(props) {
             <div className="myOrderDetailBox">
                 <div className="myOrderDetailTop">
                     <div className="myOrderDetailImageBox">
-                        <img src={"/fruits/" + fruit.thumbnail} alt="" id="myOrderDetailImage" />
+                        <img src={"http://localhost:8080/pdImages/" + fruit.thumbnail} alt="" id="myOrderDetailImage" />
                     </div>
                 </div>
                 <div className="myOrderDetailMiddle">
