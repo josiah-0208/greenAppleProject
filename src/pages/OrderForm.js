@@ -260,7 +260,7 @@ function CartDetailOrder(props) {
         <div className="container_cartdetailorder">
             <div className="cartDetailBoxOrder">
                 <div className="cartDetailImageBoxOrder">
-                    <img src={"/fruits/" + props.cart.thumbnail} alt="" id="cartDetailImageOrder" />
+                    <img src={"http://localhost:8080/pdImages/" + props.cart.thumbnail} alt="" id="cartDetailImageOrder" />
                 </div>
                 <div className="cartDetailProductNameOrder">
                     {props.cart.productName}

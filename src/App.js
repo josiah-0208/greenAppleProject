@@ -17,6 +17,7 @@ import OrderForm from './pages/OrderForm';
 import MyOrder from './pages/MyOrder';
 import ProductInsert from './adminPages/ProductInsert';
 import Admin from './adminPages/Admin';
+import ProductUpdate from './adminPages/ProductUpdate';
 
 function App() {
 
@@ -70,6 +71,7 @@ function App() {
           <Route path="/order" element={<OrderForm />} />
           <Route path="/myOrder" element={<MyOrder />} />
           <Route path="/productInsert" element={<ProductInsert />} />
+          <Route path="/productUpdate" element={<ProductUpdate />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
       </div>
@@ -138,7 +140,7 @@ function WatchedImage(props) {
       navigate('/product/view/' + fruit.productCode)
       dispatch(changeWatchedState(!reduxstate.watchedState))
     }} >
-      <img src={"/fruits/" + fruit.thumbnail} alt="" id="watchedImage" />
+      <img src={"http://localhost:8080/pdImages/" + fruit.thumbnail} alt="" id="watchedImage" />
     </div>
   )
 }

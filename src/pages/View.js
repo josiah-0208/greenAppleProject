@@ -120,7 +120,7 @@ function View() {
         <div className="container_view">
             <div className="viewTop">
                 <div className="titleImageBox">
-                    <img src={"/fruits/" + product.thumbnail} alt="" id="titleImage" />
+                    <img src={"http://localhost:8080/pdImages/" + product.thumbnail} alt="" id="titleImage" />
                 </div>
                 <div className="detailOrderBox">
                     <div className="orderBoxReviewCount">
