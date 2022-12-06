@@ -23,7 +23,7 @@ function ProductInsert() {
         if (!e.target.files) {
             return;
         }
-
+        
         setImgSrc(URL.createObjectURL(e.target.files[0]));
 
     }
@@ -63,7 +63,7 @@ function ProductInsert() {
         formData.append("price", insertPrice);
         formData.append("stock", insertStock);
         formData.append("productDescription", insertProductDescription);
-
+        
         console.log(formData.values)
 
         axios(
@@ -128,7 +128,7 @@ function ProductInsert() {
                             <button onClick={insertProductImgBtn}
                                 id="insertProductImgBtn" >업로드</button>
                             <div className='insertProductImgMax'>
-                                최대 ({productImgMax}/3)개
+                                권장 ({productImgMax}/3)개
                             </div>
                         </div>
                         <div className="insertProductImgRightArea">
