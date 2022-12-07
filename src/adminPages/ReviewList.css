@@ -4,7 +4,7 @@ html, body {
     height: 100%;
 }
 
-.container_memberlist {
+.container_reviewlist {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,40 +12,40 @@ html, body {
     height: 100%;
 }
 
-.memberListBox {
+.reviewListBox {
     width: 90%;
     height: 90%;
     display: flex;
     flex-direction: column;
 }
 
-.memberListTop {
+.reviewListTop {
     display: flex;
     justify-content: space-between;
     height: 3rem;
 }
 
-.memberListTitle {
+.reviewListTitle {
     font-size: 1.1rem;
     padding-left: 1rem;
 }
 
-.memberListSearchArea {
+.reviewListSearchArea {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 26%;
 }
 
-.memberListSelect {
+.reviewListSelect {
     cursor: pointer;
 }
 
-.memberListSearchInput {
+.reviewListSearchInput {
     width: 8rem;
 }
 
-.memberListMiddle {
+.reviewListMiddle {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,30 +64,27 @@ thead th {
     padding: 0.5rem;
 }
 
-.tableHeadId {
-    width: 12%;
+.tableHeadNoReviewList {
+    width: 6%;
 }
-
-.tableHeadName {
+.tableHeadIdReviewList {
     width: 8%;
 }
-
-.tableHeadTel {
-    width: 18%;
+.tableHeadProductCodeReviewList {
+    width: 8%;
 }
-
-.tableHeadAddr {
-    width: 29%;
+.tableHeadProductReviewList {
+    width: 14%;
 }
-
-.tableHeadJoinDate {
+.tableHeadContentReviewList {
+    width: 30%;
+}
+.tableHeadDateReviewList {
     width: 9%;
 }
-
-.tableHeadTel {
-    width: 10%;
+.tableHeadDelReviewList {
+    width: 8%;
 }
-
 tbody td {
     font-size: 15px;
     padding: 0.5rem;
@@ -96,7 +93,7 @@ tbody td {
     border-bottom: 1px solid gray;
 }
 
-.memberListDetailDel {
+.reviewListDetailDel {
     display: flex;
     justify-content: space-evenly;
 }
@@ -104,41 +101,29 @@ tbody td {
 
 /* 페이징 */
 
-.memberListBottom {
+.reviewListBottom {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
 }
 
-.memberListLeftDoubleArrowBox {
+.reviewListLeftDoubleArrowBox {
     width: 1rem;
     height: 1rem;
 }
-.memberListLeftDoubleArrow {
-    width: 1rem;
-    height: 1rem;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.memberListLeftArrowBox {
-    width: 1rem;
-    height: 1rem;
-}
-.memberListLeftArrow {
+.reviewListLeftDoubleArrow {
     width: 1rem;
     height: 1rem;
     object-fit: cover;
     cursor: pointer;
-
 }
 
-.memberListRightArrowBox {
+.reviewListLeftArrowBox {
     width: 1rem;
     height: 1rem;
 }
-.memberListRightArrow {
+.reviewListLeftArrow {
     width: 1rem;
     height: 1rem;
     object-fit: cover;
@@ -146,11 +131,23 @@ tbody td {
 
 }
 
-.memberListRightDoubleArrowBox {
+.reviewListRightArrowBox {
     width: 1rem;
     height: 1rem;
 }
-.memberListRightDoubleArrow {
+.reviewListRightArrow {
+    width: 1rem;
+    height: 1rem;
+    object-fit: cover;
+    cursor: pointer;
+
+}
+
+.reviewListRightDoubleArrowBox {
+    width: 1rem;
+    height: 1rem;
+}
+.reviewListRightDoubleArrow {
     width: 1rem;
     height: 1rem;
     object-fit: cover;
@@ -163,10 +160,4 @@ tbody td {
     border-radius: 90%;
     border: none;
     cursor: pointer;
-}
-
-
-/* 멤버 리스트 디테일 */
-
-.memberListDetailDelTd {
 }

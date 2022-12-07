@@ -1,9 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useEffect } from "react";
 import "./MemberList.css"
 
 function MemberList() {
+
+    const searchSubmitBtn = useRef();  // 검색 엔터누르면 버튼 눌러지게
     //페이징
     const [pagePerBlock, setPagePerBlock] = useState(5)
     const [pageNum, setPageNum] = useState(1);
@@ -25,8 +27,6 @@ function MemberList() {
 
         axios.post("/admin/memberList", body)
             .then((res) => {
-                console.log(res.data)
-                console.log(typeof res.data.endPage)
                 setMemberList(res.data.memberList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -64,7 +64,8 @@ function MemberList() {
                         e.preventDefault();
                         paginationOnClick(i)
                     }}
-                        style={{ border: "2px solid #419ae8", color: "#419ae8" }} >
+                        style={{ border: "0.1rem solid #419ae8", color: "#419ae8" }}
+                        className="paginationBtn" >
                         {i}
                     </button>
                 )
@@ -74,7 +75,7 @@ function MemberList() {
                         e.stopPropagation();
                         e.preventDefault();
                         paginationOnClick(i)
-                    }} >
+                    }} className="paginationBtn" >
                         {i}
                     </button>
                 )
@@ -94,8 +95,6 @@ function MemberList() {
 
         axios.post("/admin/memberList", body)
             .then((res) => {
-                console.log(res.data)
-                console.log(typeof res.data.endPage)
                 setMemberList(res.data.memberList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -113,8 +112,6 @@ function MemberList() {
 
         axios.post("/admin/memberList", body)
             .then((res) => {
-                console.log(res.data)
-                console.log(typeof res.data.endPage)
                 setMemberList(res.data.memberList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -132,8 +129,6 @@ function MemberList() {
 
         axios.post("/admin/memberList", body)
             .then((res) => {
-                console.log(res.data)
-                console.log(typeof res.data.endPage)
                 setMemberList(res.data.memberList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -151,7 +146,6 @@ function MemberList() {
 
         axios.post("/admin/memberList", body)
             .then((res) => {
-                console.log(res.data)
                 setMemberList(res.data.memberList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -169,7 +163,6 @@ function MemberList() {
 
         axios.post("/admin/memberList", body)
             .then((res) => {
-                console.log(res.data)
                 setMemberList(res.data.memberList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -178,7 +171,7 @@ function MemberList() {
             })
     }
 
-    const memberListAftDelete = () => {
+    const memberListAftDelete = () => {   // 삭제가 진행된 후에 서버에서 데이터 다시 받아옴.
         let body = {
             keyword: memberListSearch,
             tag: memberListSelectValue,
@@ -187,7 +180,6 @@ function MemberList() {
 
         axios.post("/admin/memberList", body)
             .then((res) => {
-                console.log(res.data)
                 setMemberList(res.data.memberList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -212,16 +204,21 @@ function MemberList() {
                                 <option key="name" value="name">이름</option>
                                 <option key="tel" value="tel">전화번호</option>
                                 <option key="address1" value="address1">주소</option>
-                            </select>{memberListSelectValue}
+                            </select>
                         </div>
                         <div>
                             <input type="text" className="memberListSearchInput"
                                 onChange={(e) => {
                                     setMemberListSearch(e.target.value)
-                                }} /> {memberListSearch}
+                                }} onKeyDown={(e) => {
+                                    if (e.key === "Enter") {        // 엔터를 누르면
+                                        searchSubmitBtn.current.click();    // 참조된 곳 누르기
+                                    }
+                                }} />
                         </div>
                         <div>
-                            <button onClick={memberListSearchBtn}>검색</button>
+                            <button onClick={memberListSearchBtn}
+                                ref={searchSubmitBtn} style={{cursor: "pointer"}}>검색</button>
                         </div>
                     </div>
                 </div>
@@ -229,22 +226,22 @@ function MemberList() {
                     <table className="memberListTable">
                         <thead>
                             <tr>
-                                <th>
+                                <th className="tableHeadId">
                                     ID
                                 </th>
-                                <th>
+                                <th className="tableHeadName">
                                     이름
                                 </th>
-                                <th>
+                                <th className="tableHeadTel">
                                     전화번호
                                 </th>
-                                <th>
+                                <th className="tableHeadAddr">
                                     주소
                                 </th>
-                                <th>
+                                <th className="tableHeadJoinDate">
                                     가입일
                                 </th>
-                                <th>
+                                <th className="tableHeadTel">
                                     탈퇴여부
                                 </th>
                             </tr>
@@ -263,54 +260,52 @@ function MemberList() {
                     </table>
                 </div>
                 <div className="memberListBottom">
-                    <div className="">
-                        <div>
-                            {
-                                startPage > pagePerBlock && // 스타트페이지가 기준페이지보다 크면
-                                <div className="memberListLeftDoubleArrowBox">
-                                    <img className="memberListLeftDoubleArrow" src="/icons/leftDoubleArrow.png"
-                                        onClick={() => {
-                                            paginationLeftDoubleArrow();
-                                        }}
-                                        alt="" />
-                                </div>
-                            }
-                            {
-                                pageNum > 1 && // 페이지넘이 1보다 클 때
-                                <div className="memberListLeftArrowBox">
-                                    <img className="memberListLeftArrow" src="/icons/leftArrow.png"
-                                        onClick={() => {
-                                            paginationLeftArrow();
-                                        }}
-                                        alt="" />
-                                </div>
-                            }
-                        </div>
-                        <div>
-                            {pagination()}
-                        </div>
-                        <div>
-                            {
-                                pageNum < totalPage && // 페이지넘이 전체페이지보다 작을 때
-                                <div className="memberListRightArrowBox">
-                                    <img className="memberListRightArrow" src="/icons/rightArrow.png"
-                                        onClick={() => {
-                                            paginationRightArrow();
-                                        }}
-                                        alt="" />
-                                </div>
-                            }
-                            {
-                                endPage < totalPage && // 끝페이지가 전체페이지보다 작을 때
-                                <div className="memberListRightDoubleArrowBox">
-                                    <img className="memberListRightDoubleArrow" src="/icons/rightDoubleArrow.png"
-                                        onClick={() => {
-                                            paginationRightDoubleArrow();
-                                        }}
-                                        alt="" />
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        {
+                            startPage > pagePerBlock && // 스타트페이지가 기준페이지보다 크면
+                            <div className="memberListLeftDoubleArrowBox">
+                                <img className="memberListLeftDoubleArrow" src="/icons/leftDoubleArrow.png"
+                                    onClick={() => {
+                                        paginationLeftDoubleArrow();
+                                    }}
+                                    alt="" />
+                            </div>
+                        }
+                        {
+                            pageNum > 1 && // 페이지넘이 1보다 클 때
+                            <div className="memberListLeftArrowBox">
+                                <img className="memberListLeftArrow" src="/icons/leftArrow.png"
+                                    onClick={() => {
+                                        paginationLeftArrow();
+                                    }}
+                                    alt="" />
+                            </div>
+                        }
+                    </div>
+                    <div>
+                        {pagination()}
+                    </div>
+                    <div>
+                        {
+                            pageNum < totalPage && // 페이지넘이 전체페이지보다 작을 때
+                            <div className="memberListRightArrowBox">
+                                <img className="memberListRightArrow" src="/icons/rightArrow.png"
+                                    onClick={() => {
+                                        paginationRightArrow();
+                                    }}
+                                    alt="" />
+                            </div>
+                        }
+                        {
+                            endPage < totalPage && // 끝페이지가 전체페이지보다 작을 때
+                            <div className="memberListRightDoubleArrowBox">
+                                <img className="memberListRightDoubleArrow" src="/icons/rightDoubleArrow.png"
+                                    onClick={() => {
+                                        paginationRightDoubleArrow();
+                                    }}
+                                    alt="" />
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -321,6 +316,21 @@ function MemberList() {
 export default MemberList;
 
 function MemberListDetail(props) {
+
+    const [tel, setTel] = useState("")
+
+    useEffect(() => {                   // 받은 멤버 전화번호를 문자열로 만들어서 - 입력
+
+        let telCopy = props.member.tel+"";
+        console.log(telCopy)
+        if (telCopy.length === 10) {
+            setTel(telCopy.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'));
+        }
+        if (telCopy.length === 11) {
+            setTel(telCopy.replace(/-/g, '').replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3'));
+        }
+
+    }, []);
 
     const MemberListDetailDelteBtn = () => {
         let body = {
@@ -349,7 +359,7 @@ function MemberListDetail(props) {
             </td>
             <td>
                 <div className="memberListDetailTel">
-                    {props.member.tel}
+                    {tel}
                 </div>
             </td>
             <td>
@@ -362,22 +372,21 @@ function MemberListDetail(props) {
                     {props.member.joinDate}
                 </div>
             </td>
-            <td>
+            <td className="memberListDetailDelTd">
                 <div className="memberListDetailDel">
                     <div>
                         {props.member.del}
                     </div>
-                    <div>
                         {
-                            props.member.del === "n" && <button onClick={() => {
-                                if (window.confirm("정말로 삭제하시겠습니까?")) {
-                                    MemberListDetailDelteBtn();
-                                }
-                            }}>
+                            props.member.del === "n" && <button style={{cursor: "pointer"}}
+                                onClick={() => {
+                                    if (window.confirm("정말로 삭제하시겠습니까?")) {
+                                        MemberListDetailDelteBtn();
+                                    }
+                                }} >
                                 삭제
                             </button>
                         }
-                    </div>
                 </div>
             </td>
         </tr>
