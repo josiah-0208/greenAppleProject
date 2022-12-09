@@ -4,7 +4,7 @@ html, body {
     height: 100%;
 }
 
-.container_reviewlist {
+.container_productlist {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,40 +12,40 @@ html, body {
     height: 100%;
 }
 
-.reviewListBox {
+.productListBox {
     width: 90%;
     height: 90%;
     display: flex;
     flex-direction: column;
 }
 
-.reviewListTop {
+.productListTop {
     display: flex;
     justify-content: space-between;
     height: 3rem;
 }
 
-.reviewListTitle {
+.productListTitle {
     font-size: 1.1rem;
     padding-left: 1rem;
 }
 
-.reviewListSearchArea {
+.productListSearchArea {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 26%;
 }
 
-.reviewListSelect {
+.productListSelect {
     cursor: pointer;
 }
 
-.reviewListSearchInput {
+.productListSearchInput {
     width: 8rem;
 }
 
-.reviewListMiddle {
+.productListMiddle {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,27 +64,34 @@ thead th {
     padding: 0.5rem;
 }
 
-.tableHeadNoReviewList {
-    width: 6%;
-}
-.tableHeadIdReviewList {
-    width: 8%;
-}
-.tableHeadProductCodeReviewList {
-    width: 8%;
-}
-.tableHeadProductReviewList {
-    width: 14%;
-}
-.tableHeadContentReviewList {
-    width: 30%;
-}
-.tableHeadDateReviewList {
+.tableHeadProductCodeProductList {
     width: 9%;
 }
-.tableHeadDelReviewList {
+.tableHeadThumbnailProductList {
+    width: 6%;
+}
+.tableHeadProductNameProductList {
+    width: 30%;
+}
+.tableHeadSeasonalProductList {
+    width: 5%;
+}
+.tableHeadOriginProductList {
+    width: 7%;
+}
+.tableHeadPriceProductList {
     width: 8%;
 }
+.tableHeadStockProductList {
+    width: 8%;
+}
+.tableHeadInputDateProductList {
+    width: 12%;
+}
+.tableHeadDelProductList {
+    width: 15%;
+}
+
 tbody td {
     font-size: 15px;
     padding: 0.5rem;
@@ -93,7 +100,7 @@ tbody td {
     border-bottom: 1px solid gray;
 }
 
-.reviewListDetailDel {
+.productListDetailDel {
     display: flex;
     justify-content: space-evenly;
 }
@@ -101,41 +108,29 @@ tbody td {
 
 /* 페이징 */
 
-.reviewListBottom {
+.productListBottom {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
 }
 
-.reviewListLeftDoubleArrowBox {
+.productListLeftDoubleArrowBox {
     width: 1rem;
     height: 1rem;
 }
-.reviewListLeftDoubleArrow {
-    width: 1rem;
-    height: 1rem;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.reviewListLeftArrowBox {
-    width: 1rem;
-    height: 1rem;
-}
-.reviewListLeftArrow {
+.productListLeftDoubleArrow {
     width: 1rem;
     height: 1rem;
     object-fit: cover;
     cursor: pointer;
-
 }
 
-.reviewListRightArrowBox {
+.productListLeftArrowBox {
     width: 1rem;
     height: 1rem;
 }
-.reviewListRightArrow {
+.productListLeftArrow {
     width: 1rem;
     height: 1rem;
     object-fit: cover;
@@ -143,11 +138,23 @@ tbody td {
 
 }
 
-.reviewListRightDoubleArrowBox {
+.productListRightArrowBox {
     width: 1rem;
     height: 1rem;
 }
-.reviewListRightDoubleArrow {
+.productListRightArrow {
+    width: 1rem;
+    height: 1rem;
+    object-fit: cover;
+    cursor: pointer;
+
+}
+
+.productListRightDoubleArrowBox {
+    width: 1rem;
+    height: 1rem;
+}
+.productListRightDoubleArrow {
     width: 1rem;
     height: 1rem;
     object-fit: cover;
@@ -160,4 +167,45 @@ tbody td {
     border-radius: 90%;
     border: none;
     cursor: pointer;
+}
+
+
+/* 멤버 리스트 디테일 */
+
+.productListDetailThumbnailTd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem;
+    padding-left: 0px;
+}
+
+.productListDetailThumbnail {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.productListDetailThumbnailImg {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+}
+
+.productListDetailSeasonalTd {
+    text-align: center;
+}
+
+.productListDetailoriginTd {
+    text-align: center;
+}
+
+.productListDetailPriceTd {
+    text-align: end;
+}
+
+.productListDetailStockTd {
+    text-align: end;
+}
+
+.productListDetailInputDateTd {
+    text-align: center;
 }

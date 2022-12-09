@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { useRef, useState } from 'react';
 import { NumericFormat } from 'react-number-format';
+import { useNavigate } from 'react-router-dom';
 import './ProductInsert.css';
 
 function ProductInsert() {
+
+    const navigate = useNavigate();
 
     const [insertName, setInsertName] = useState("");
     const [insertOrigin, setInsertOrigin] = useState("");
@@ -76,8 +79,10 @@ function ProductInsert() {
                     'Content-Type': 'multipart/form-data',
                 }
             }
-        ).then((response) => {
-            console.log(response.data)
+        ).then((res) => {
+            if (res.data === 1 || res.data === 2) {
+                navigate("/admin");
+            }
         })
 
     }
@@ -164,8 +169,7 @@ function ProductInsert() {
                                 제철
                             </div>
                             <div className="insertSeasonalSelectBox">
-                                <select className='insertSeasonalSelect' value={insertSeasonal}
-                                    onChange={(e) => {
+                                <select className='insertSeasonalSelect' onChange={(e) => {
                                         setInsertSeasonal(e.target.value)
                                     }} defaultValue={insertSeasonal}>
                                     <option key="sp" value="sp">봄</option>

@@ -332,7 +332,7 @@ function MemberListDetail(props) {
 
     }, []);
 
-    const MemberListDetailDelteBtn = () => {
+    const memberListDetailDelteBtn = () => {
         let body = {
             id: props.member.id
         }
@@ -381,7 +381,7 @@ function MemberListDetail(props) {
                             props.member.del === "n" && <button style={{cursor: "pointer"}}
                                 onClick={() => {
                                     if (window.confirm("정말로 삭제하시겠습니까?")) {
-                                        MemberListDetailDelteBtn();
+                                        memberListDetailDelteBtn();
                                     }
                                 }} >
                                 삭제

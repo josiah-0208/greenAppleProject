@@ -3,12 +3,16 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { NumericFormat } from 'react-number-format';
+import { useNavigate } from "react-router-dom";
 import "./ProductUpdate.css"
 
 function ProductUpdate() {
 
+    const navigate = useNavigate();
+
     const [product, setProduct] = useState({});
     const [productCode, setProductCode] = useState("")
+    
 
     useEffect(() => {
 
@@ -18,6 +22,13 @@ function ProductUpdate() {
         .then((res) => {
             console.log(res.data)
             setProduct(res.data);
+            setInsertName(res.data.productName);
+            setInsertOrigin(res.data.origin);
+            setInsertSeasonal(res.data.seasonal);
+            setInsertPrice(res.data.price);
+            setInsertStock(res.data.stock);
+            setInsertProductDescription(res.data.productDescription);
+            document.getElementById(res.data.seasonal+"").selected = "true";
         })
     }, [])
     
@@ -95,8 +106,11 @@ function ProductUpdate() {
                     'Content-Type': 'multipart/form-data',
                 }
             }
-        ).then((response) => {
-            console.log(response.data)
+        ).then((res) => {
+            console.log(res.data)
+            if (res.data === 1 || res.data === 2) {
+                navigate("/admin")
+            }
         })
 
     }
@@ -121,7 +135,7 @@ function ProductUpdate() {
                         <div className="insertNameInputBox">
                             <input type="text" id="insertNameInput" onChange={(e) => {
                                 setInsertName(e.target.value);
-                            }} required />
+                            }} defaultValue={insertName} required />
                         </div>
                     </div>
                     <div className="insertThumbnailBox">
@@ -175,7 +189,7 @@ function ProductUpdate() {
                                 <input type="text" onChange={(e) => {
                                     setInsertOrigin(e.target.value)
                                 }}
-                                    id="insertOriginInput" />
+                                    id="insertOriginInput" defaultValue={insertOrigin} />
                             </div>
                         </div>
                         <div className='insertSeasonalBox'>
@@ -183,14 +197,14 @@ function ProductUpdate() {
                                 제철
                             </div>
                             <div className="insertSeasonalSelectBox">
-                                <select className='insertSeasonalSelect' value={insertSeasonal}
+                                <select className='insertSeasonalSelect'
                                     onChange={(e) => {
                                         setInsertSeasonal(e.target.value)
                                     }} defaultValue={insertSeasonal}>
-                                    <option key="sp" value="sp">봄</option>
-                                    <option key="su" value="su">여름</option>
-                                    <option key="fa" value="fa">가을</option>
-                                    <option key="wi" value="wi">겨울</option>
+                                    <option id="sp" key="sp" value="sp">봄</option>
+                                    <option id="su" key="su" value="su">여름</option>
+                                    <option id="fa" key="fa" value="fa">가을</option>
+                                    <option id="wi" key="wi" value="wi">겨울</option>
                                 </select>
                             </div>
                         </div>
@@ -204,7 +218,7 @@ function ProductUpdate() {
                                 <NumericFormat thousandSeparator={true} required
                                     onChange={(e) => {
                                         setInsertPrice(stringNumberToInt(e.target.value))
-                                    }} id="insertPriceInput" /> 원
+                                    }} id="insertPriceInput" value={insertPrice} /> 원
                             </div>
                         </div>
                         <div className='insertStockBox'>
@@ -215,7 +229,7 @@ function ProductUpdate() {
                                 <NumericFormat thousandSeparator={true} required
                                     onChange={(e) => {
                                         setInsertStock(stringNumberToInt(e.target.value))
-                                    }} id="insertStockInput" /> 개
+                                    }} id="insertStockInput" value={insertStock} /> 개
                             </div>
                         </div>
                     </div>
@@ -228,7 +242,8 @@ function ProductUpdate() {
                                 onChange={(e) => {
                                     setInsertProductDescription(e.target.value)
                                 }}
-                                id="insertProductDescriptionTextArea" />
+                                id="insertProductDescriptionTextArea" 
+                                defaultValue={insertProductDescription} />
                         </div>
                     </div>
                 </div>
