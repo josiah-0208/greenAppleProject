@@ -238,9 +238,6 @@ function ReviewList() {
                                 <th className="tableHeadProductCodeReviewList">
                                     상품코드
                                 </th>
-                                <th className="tableHeadProductReviewList">
-                                    구매상품
-                                </th>
                                 <th className="tableHeadContentReviewList">
                                     리뷰 내용
                                 </th>
@@ -323,10 +320,6 @@ export default ReviewList;
 
 function ReviewListDetail(props) {
 
-    useEffect(() => {
-
-    }, [])
-
     const reviewListDetailDelteBtn = () => {
         let body = {
             reviewId: props.review.reviewId
@@ -336,7 +329,6 @@ function ReviewListDetail(props) {
                 if (res.data === 1) {
                     props.reviewListAftDelete();
                 }
-                console.log(res.data)
             })
     }
 
@@ -355,11 +347,6 @@ function ReviewListDetail(props) {
             </td>
             <td>
                 <div className="reviewListDetailProductCode">
-                    {props.review.productCode}
-                </div>
-            </td>
-            <td>
-                <div className="reviewListDetailProduct">
                     {props.review.productCode}
                 </div>
             </td>
