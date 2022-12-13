@@ -65,6 +65,7 @@ function Join() {
             }
         })
             .then((response) => {
+                console.log(response)
                 console.log(response.data)
                 if (response.data === 1) {
                     setIdChkState("black")

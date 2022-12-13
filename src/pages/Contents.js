@@ -46,6 +46,7 @@ function Contents(props) {
                 .then((response) => {
                     setFruits(response.data)
                     console.log(response.data)
+                    console.log(response)
                     console.log("실행 2")
                 })
                 .catch(() => {
