@@ -21,6 +21,7 @@ function Cart() {
         axios.get("/cart")
             .then((response) => {
                 setCarts(response.data);
+                console.log(response)
                 console.log(response.data)
                 console.log("실행2-2")
             })
