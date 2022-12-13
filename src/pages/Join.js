@@ -63,7 +63,7 @@ function Join() {
             params: {
                 id: id
             }
-        })
+        }, { withCredentials: true })
             .then((response) => {
                 console.log(response)
                 console.log(response.data)
