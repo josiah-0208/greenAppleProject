@@ -17,12 +17,16 @@ function Cart() {
     const [cartTotalPriceState, setCartTotalPriceState] = useState(0);
     const [cartDetailPriceArr, setCartDetailPriceArr] = useState([]);
     useEffect(() => {
+        console.log("실행2-1")
         axios.get("/cart")
             .then((response) => {
                 setCarts(response.data);
+                console.log(response.data)
+                console.log("실행2-2")
             })
             .catch((response) => {
                 console.log("장바구니 조회 실패")
+                console.log("실행2-3")
             })
     }, [cartListState])
 
