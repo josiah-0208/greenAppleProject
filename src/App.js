@@ -18,7 +18,7 @@ import MyOrder from './pages/MyOrder';
 import ProductInsert from './adminPages/ProductInsert';
 import Admin from './adminPages/Admin';
 import ProductUpdate from './adminPages/ProductUpdate';
-axios.defaults.baseURL = "http://13.124.91.28";
+axios.defaults.baseURL = "http://13.124.91.28:8080";
 
 function App() {
 
