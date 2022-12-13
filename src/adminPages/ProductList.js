@@ -259,7 +259,7 @@ function ProductList() {
                         </thead>
                         <tbody>
                             {
-                                productList.map((product, idx) => {
+                                productList && productList.map((product, idx) => {
                                     return (
                                         <ProductListDetail product={product}
                                             key={"productListDetail" + idx}

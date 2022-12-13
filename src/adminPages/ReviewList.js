@@ -251,7 +251,7 @@ function ReviewList() {
                         </thead>
                         <tbody>
                             {
-                                reviewList.map((review, idx) => {
+                                reviewList && reviewList.map((review, idx) => {
                                     return (
                                         <ReviewListDetail review={review}
                                             key={"reviewListDetail" + idx}

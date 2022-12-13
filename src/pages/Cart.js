@@ -74,7 +74,7 @@ function Cart() {
                 </div>
                 <div className="cartDetailArea">
                     {
-                        carts.map((cart, i) => {
+                        carts && carts.map((cart, i) => {
                             return (
                                 <CartDetail cart={cart} key={cart.cartNo} i={i}
                                     cartListState={cartListState}

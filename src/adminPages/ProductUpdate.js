@@ -166,7 +166,7 @@ function ProductUpdate() {
                         </div>
                         <div className="insertProductImgRightArea">
                             {
-                                productImgSrc.map((val, idx) => {
+                                productImgSrc && productImgSrc.map((val, idx) => {
                                     return (
                                         <div key={val+idx} className='insertProductImgPreviewBox'>
                                             <img src={val} alt="" id="insertProductImgPreviewImg" />
