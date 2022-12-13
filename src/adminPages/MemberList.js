@@ -248,7 +248,7 @@ function MemberList() {
                         </thead>
                         <tbody>
                             {
-                                memberList.map((member, idx) => {
+                                memberList && memberList.map((member, idx) => {
                                     return (
                                         <MemberListDetail member={member}
                                             key={"memberListDetail" + idx}

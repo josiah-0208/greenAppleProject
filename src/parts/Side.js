@@ -28,7 +28,7 @@ function Side(props) {
     return (
         <div className="container_side">
             {
-                tagName.map((v, i) => {
+                tagName && tagName.map((v, i) => {
                     return (<Tag tagName={tagName[i]} key={i} 
                         index={i} setTagState={props.setTagState} setTagColor={setTagColor}
                         tagColor={tagColor}/>)

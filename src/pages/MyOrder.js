@@ -38,7 +38,7 @@ function MyorderObject() {
         <div className="container_myorderobject">
             <div className="myOrderObjectBox">
                 {
-                    orderList.map((order, i) => {
+                    orderList && orderList.map((order, i) => {
                         return (
                             <MyorderDetail order={order} key={order.orderId}
                                 orderListState={orderListState}
@@ -105,7 +105,7 @@ function MyorderDetail(props) {
                 </div>
             </div>
             {
-                orderDetailList.map((orderDetail, i) => {
+                orderDetailList && orderDetailList.map((orderDetail, i) => {
                     return (
                         <MyorderDetailObject orderDetail={orderDetail}
                             order={props.order} key={orderDetail.detailNo} />

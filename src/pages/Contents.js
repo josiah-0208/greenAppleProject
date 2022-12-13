@@ -101,7 +101,7 @@ function Contents(props) {
                         <img src="/icons/upArrow.png" alt="" id="upButton" />
                     </div>
                 }
-                {fruits.map((fruit, i) => {
+                {fruits && fruits.map((fruit, i) => {
                     return (
                         <React.Fragment key={i}>
                             {

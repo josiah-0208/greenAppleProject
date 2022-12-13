@@ -253,7 +253,7 @@ function Review(props) {
             </div>
             <div className="reviewExpressionArea">
                 {
-                    productReviews.map((review, i) => {
+                    productReviews && productReviews.map((review, i) => {
                         return (
                             <ReviewExpression review={review} key={review.reviewId}
                                 reviewListOnChange={reviewListOnChange}
