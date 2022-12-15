@@ -263,53 +263,47 @@ function ReviewList() {
                     </table>
                 </div>
                 <div className="reviewListBottom">
-                    <div>
-                        {
-                            startPage > pagePerBlock && // 스타트페이지가 기준페이지보다 크면
-                            <div className="reviewListLeftDoubleArrowBox">
-                                <img className="reviewListLeftDoubleArrow" src="/icons/leftDoubleArrow.png"
-                                    onClick={() => {
-                                        paginationLeftDoubleArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                        {
-                            pageNum > 1 && // 페이지넘이 1보다 클 때
-                            <div className="reviewListLeftArrowBox">
-                                <img className="reviewListLeftArrow" src="/icons/leftArrow.png"
-                                    onClick={() => {
-                                        paginationLeftArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                    </div>
-                    <div>
-                        {pagination()}
-                    </div>
-                    <div>
-                        {
-                            pageNum < totalPage && // 페이지넘이 전체페이지보다 작을 때
-                            <div className="reviewListRightArrowBox">
-                                <img className="reviewListRightArrow" src="/icons/rightArrow.png"
-                                    onClick={() => {
-                                        paginationRightArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                        {
-                            endPage < totalPage && // 끝페이지가 전체페이지보다 작을 때
-                            <div className="reviewListRightDoubleArrowBox">
-                                <img className="reviewListRightDoubleArrow" src="/icons/rightDoubleArrow.png"
-                                    onClick={() => {
-                                        paginationRightDoubleArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                    </div>
+                    {
+                        startPage > pagePerBlock && // 스타트페이지가 기준페이지보다 크면
+                        <div className="reviewListLeftDoubleArrowBox">
+                            <img className="reviewListLeftDoubleArrow" src="/icons/leftDoubleArrow.png"
+                                onClick={() => {
+                                    paginationLeftDoubleArrow();
+                                }}
+                                alt="" />
+                        </div>
+                    }
+                    {
+                        pageNum > 1 && // 페이지넘이 1보다 클 때
+                        <div className="reviewListLeftArrowBox">
+                            <img className="reviewListLeftArrow" src="/icons/leftArrow.png"
+                                onClick={() => {
+                                    paginationLeftArrow();
+                                }}
+                                alt="" />
+                        </div>
+                    }
+                    {pagination()}
+                    {
+                        pageNum < totalPage && // 페이지넘이 전체페이지보다 작을 때
+                        <div className="reviewListRightArrowBox">
+                            <img className="reviewListRightArrow" src="/icons/rightArrow.png"
+                                onClick={() => {
+                                    paginationRightArrow();
+                                }}
+                                alt="" />
+                        </div>
+                    }
+                    {
+                        endPage < totalPage && // 끝페이지가 전체페이지보다 작을 때
+                        <div className="reviewListRightDoubleArrowBox">
+                            <img className="reviewListRightDoubleArrow" src="/icons/rightDoubleArrow.png"
+                                onClick={() => {
+                                    paginationRightDoubleArrow();
+                                }}
+                                alt="" />
+                        </div>
+                    }
                 </div>
             </div>
         </div>

@@ -12,6 +12,7 @@ function Join() {
     let [name, setName] = useState("")
     let [phone, setPhone] = useState("")
     let [addr, setAddr] = useState("")
+    const [addr2, setAddr2] = useState("");
     let navigate = useNavigate();
     let [idChkState, setIdChkState] = useState("white");
     let [idChkStateOk, setIdChkStateOk] = useState(0);
@@ -35,7 +36,7 @@ function Join() {
             name: name,
             tel: phone,
             address1: addr,
-            address2: "",
+            address2: addr2,
         }
         axios.post('/join', body)
             .then((response) => {
@@ -63,7 +64,7 @@ function Join() {
             params: {
                 id: id
             }
-        }, { withCredentials: true })
+        })
             .then((response) => {
                 console.log(response)
                 console.log(response.data)
@@ -90,7 +91,7 @@ function Join() {
                     <div className="joinIdBox">
                         <input type="text" placeholder="아이디" onChange={(e) => {
                             setId(e.target.value);
-                        }} id="joinIdInput" />
+                        }} id="joinIdInput" required />
                         <button type="button" onClick={idChk} id="idChkButton">중복 확인</button>
                     </div>
                     <div className="idChkMsgBox">
@@ -98,27 +99,30 @@ function Join() {
                     </div>
                     <input type="password" placeholder="비밀번호" onChange={(e) => {
                         setPassword(e.target.value)
-                    }} id="joinPasswordInput" />
+                    }} id="joinPasswordInput" required />
                     <input type="password" placeholder="비밀번호 확인"
                         onChange={onChangePasswordChk} id="joinPasswordChkInput" />
-                    <PasswordChkMsg passwordChkState={passwordChkState} />
+                    <PasswordChkMsg passwordChkState={passwordChkState} required />
                     <input type="text" placeholder="이름" onChange={(e) => {
                         setName(e.target.value)
-                    }} id="joinNameInput" />
+                    }} id="joinNameInput" required />
                     <input type="tel" placeholder="핸드폰 *(-) 없이 입력" onChange={(e) => {
                         const regex = /^[0-9\b -]{0,13}$/;
                         if (regex.test(e.target.value)) {
                             setPhone(e.target.value)
                         }
-                    }} value={phone} id="joinPhoneInput" />
+                    }} value={phone} id="joinPhoneInput" required />
                     <div className="postBox">
                         <button onClick={(e) => {
                             e.preventDefault();
                             setPostPopUpState(!postPopUpState);
                         }} id="postSearchButton">주소 검색</button>
                         <input type="text" placeholder="주소" defaultValue={addr || ""}
-                            id="joinAddrInput" />
+                            id="joinAddrInput" required />
                     </div>
+                    <input type="text" placeholder="상세주소" onChange={(e) => {
+                        setAddr2(e.target.value)
+                    }} id="joinAddr2Input" required />
                     {
                         postPopUpState && <PostPopUp setPostPopUpState={setPostPopUpState}
                             postPopUpState={postPopUpState} setAddr={setAddr} />

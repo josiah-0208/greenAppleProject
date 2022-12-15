@@ -218,7 +218,7 @@ function MemberList() {
                         </div>
                         <div>
                             <button onClick={memberListSearchBtn}
-                                ref={searchSubmitBtn} style={{cursor: "pointer"}}>검색</button>
+                                ref={searchSubmitBtn} style={{ cursor: "pointer" }}>검색</button>
                         </div>
                     </div>
                 </div>
@@ -260,53 +260,47 @@ function MemberList() {
                     </table>
                 </div>
                 <div className="memberListBottom">
-                    <div>
-                        {
-                            startPage > pagePerBlock && // 스타트페이지가 기준페이지보다 크면
-                            <div className="memberListLeftDoubleArrowBox">
-                                <img className="memberListLeftDoubleArrow" src="/icons/leftDoubleArrow.png"
-                                    onClick={() => {
-                                        paginationLeftDoubleArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                        {
-                            pageNum > 1 && // 페이지넘이 1보다 클 때
-                            <div className="memberListLeftArrowBox">
-                                <img className="memberListLeftArrow" src="/icons/leftArrow.png"
-                                    onClick={() => {
-                                        paginationLeftArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                    </div>
-                    <div>
-                        {pagination()}
-                    </div>
-                    <div>
-                        {
-                            pageNum < totalPage && // 페이지넘이 전체페이지보다 작을 때
-                            <div className="memberListRightArrowBox">
-                                <img className="memberListRightArrow" src="/icons/rightArrow.png"
-                                    onClick={() => {
-                                        paginationRightArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                        {
-                            endPage < totalPage && // 끝페이지가 전체페이지보다 작을 때
-                            <div className="memberListRightDoubleArrowBox">
-                                <img className="memberListRightDoubleArrow" src="/icons/rightDoubleArrow.png"
-                                    onClick={() => {
-                                        paginationRightDoubleArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                    </div>
+                    {
+                        startPage > pagePerBlock && // 스타트페이지가 기준페이지보다 크면
+                        <div className="memberListLeftDoubleArrowBox">
+                            <img className="memberListLeftDoubleArrow" src="/icons/leftDoubleArrow.png"
+                                onClick={() => {
+                                    paginationLeftDoubleArrow();
+                                }}
+                                alt="" />
+                        </div>
+                    }
+                    {
+                        pageNum > 1 && // 페이지넘이 1보다 클 때
+                        <div className="memberListLeftArrowBox">
+                            <img className="memberListLeftArrow" src="/icons/leftArrow.png"
+                                onClick={() => {
+                                    paginationLeftArrow();
+                                }}
+                                alt="" />
+                        </div>
+                    }
+                    {pagination()}
+                    {
+                        pageNum < totalPage && // 페이지넘이 전체페이지보다 작을 때
+                        <div className="memberListRightArrowBox">
+                            <img className="memberListRightArrow" src="/icons/rightArrow.png"
+                                onClick={() => {
+                                    paginationRightArrow();
+                                }}
+                                alt="" />
+                        </div>
+                    }
+                    {
+                        endPage < totalPage && // 끝페이지가 전체페이지보다 작을 때
+                        <div className="memberListRightDoubleArrowBox">
+                            <img className="memberListRightDoubleArrow" src="/icons/rightDoubleArrow.png"
+                                onClick={() => {
+                                    paginationRightDoubleArrow();
+                                }}
+                                alt="" />
+                        </div>
+                    }
                 </div>
             </div>
         </div>
@@ -321,7 +315,7 @@ function MemberListDetail(props) {
 
     useEffect(() => {                   // 받은 멤버 전화번호를 문자열로 만들어서 - 입력
 
-        let telCopy = props.member.tel+"";
+        let telCopy = props.member.tel + "";
         console.log(telCopy)
         if (telCopy.length === 10) {
             setTel(telCopy.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'));
@@ -377,16 +371,16 @@ function MemberListDetail(props) {
                     <div>
                         {props.member.del}
                     </div>
-                        {
-                            props.member.del === "n" && <button style={{cursor: "pointer"}}
-                                onClick={() => {
-                                    if (window.confirm("정말로 삭제하시겠습니까?")) {
-                                        memberListDetailDelteBtn();
-                                    }
-                                }} >
-                                삭제
-                            </button>
-                        }
+                    {
+                        props.member.del === "n" && <button style={{ cursor: "pointer" }}
+                            onClick={() => {
+                                if (window.confirm("정말로 삭제하시겠습니까?")) {
+                                    memberListDetailDelteBtn();
+                                }
+                            }} >
+                            삭제
+                        </button>
+                    }
                 </div>
             </td>
         </tr>

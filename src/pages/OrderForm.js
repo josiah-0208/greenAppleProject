@@ -20,6 +20,7 @@ function OrderForm() {
     let [tel, setTel] = useState("");
     let [email, setEmail] = useState("");
     let [address1, setAddress1] = useState("");
+    const [address2, setAddress2] = useState("");
     let [memo, setMemo] = useState("");
     let [postPopUpState, setPostPopUpState] = useState(false);
 
@@ -37,11 +38,12 @@ function OrderForm() {
                 id: localStorage.getItem('id')
             }
         })
-        .then((response) => {
-            setMember(response.data);
-            setTel(response.data.tel)
-            setAddress1(response.data.address1)
-        })
+            .then((response) => {
+                setMember(response.data);
+                setTel(response.data.tel);
+                setAddress1(response.data.address1);
+                setAddress2(response.data.address2);
+            })
 
         let body = {
             productCode: sessionStorage.getItem("productCodeNowOrder"),
@@ -50,18 +52,18 @@ function OrderForm() {
         // 세션스토리지에 수량에 관한 정보가 없으면 일반적으로 카트 불러오는 실행
         if (sessionStorage.getItem("amount") === null || sessionStorage.getItem("amount") === undefined) {
             axios.get("/cart/orderWish")
-            .then((response) => {
-                setDetailList(response.data);
-                setCarts(response.data);
-            })
+                .then((response) => {
+                    setDetailList(response.data);
+                    setCarts(response.data);
+                })
         } else {
             axios.post("/product/nowOrder", body)
-            .then((response) => {
-                console.log(response.data)
-                let cart = response.data;
-                setDetailList([cart]);
-                setCarts([cart]);
-            })
+                .then((response) => {
+                    console.log(response.data)
+                    let cart = response.data;
+                    setDetailList([cart]);
+                    setCarts([cart]);
+                })
         }
     }, [])
     // 핸드폰 번호 하이픈(-) 달기
@@ -84,7 +86,7 @@ function OrderForm() {
             recipient: name,
             recipientTel: tel,
             address1: address1,
-            address2: "",
+            address2: address2,
             orderMemo: memo,
             payment: "success",
             payMoney: reduxState.orderFormTotalPrice,
@@ -132,6 +134,13 @@ function OrderForm() {
                     <div className="orderFormMiddle">
                         <div className="orderMemberTitle">
                             배송지정보
+                            {
+                                postPopUpState &&
+                                <div>
+                                    <PostPopUp setPostPopUpState={setPostPopUpState}
+                                        postPopUpState={postPopUpState} setAddr={setAddress1} />
+                                </div>
+                            }
                         </div>
                         <div className="orderMemberNameBox">
                             <div className="orderMemberName">
@@ -164,28 +173,33 @@ function OrderForm() {
                             </div>
                         </div>
                         <div className="orderMemberAddressBox">
-                            <div className="orderMemberAddressBoxTop">
-                                <div className="orderMemberAddress">
-                                    배송지 주소
+                            <div>
+                                <div className="orderMemberAddressBoxTop">
+                                    <div className="orderMemberAddress">
+                                        배송지 주소
+                                    </div>
+                                    <button onClick={(e) => {
+                                        e.preventDefault();
+                                        setPostPopUpState(!postPopUpState);
+                                    }} id="postSearchButtonOrderForm">주소 검색</button>
                                 </div>
-                                <button onClick={(e) => {
-                                    e.preventDefault();
-                                    setPostPopUpState(!postPopUpState);
-                                }} id="postSearchButtonOrderForm">주소 검색</button>
-                                {/* 여기에 후에 상세주소 받기 */}
-                            </div>
-                            <div className="orderMemberAddressBoxBottom">
-                                <input type="text" value={address1 || ""} onChange={(e) => {
-                                    setAddress1(e.target.value)
-                                }} required id="orderMemberAddressInput" />
-                            </div>
-                            {
-                                postPopUpState &&
-                                <div>
-                                    <PostPopUp setPostPopUpState={setPostPopUpState}
-                                        postPopUpState={postPopUpState} setAddr={setAddress1} />
+                                <div className="orderMemberAddressBoxBottom">
+                                    <input type="text" value={address1 || ""} onChange={(e) => {
+                                        setAddress1(e.target.value)
+                                    }} required id="orderMemberAddressInput" />
                                 </div>
-                            }
+                            </div>
+                            <div className="orderMemberAddressRight">
+                                <div className="orderMemberAddress2">
+                                    상세 주소
+                                </div>
+                                <div className="orderMemberAddressBoxBottom2">
+                                    <input type="text" value={address2 || ""} onChange={(e) => {
+                                        setAddress2(e.target.value)
+                                    }} id="orderMemberAddressInput2" />
+                                </div>
+                            </div>
+
                         </div>
                         <div className="orderMemoBox">
                             <div className="orderMemo">
@@ -260,7 +274,7 @@ function CartDetailOrder(props) {
         <div className="container_cartdetailorder">
             <div className="cartDetailBoxOrder">
                 <div className="cartDetailImageBoxOrder">
-                    <img src={"http://localhost:8080/pdImages/" + props.cart.thumbnail} alt="" id="cartDetailImageOrder" />
+                    <img src={"http://13.124.91.28:8080/pdImages/" + props.cart.thumbnail} alt="" id="cartDetailImageOrder" />
                 </div>
                 <div className="cartDetailProductNameOrder">
                     {props.cart.productName}

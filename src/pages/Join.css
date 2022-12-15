@@ -23,7 +23,7 @@
     justify-content: center;
     align-items: center;
     width: 450px;
-    height: 480px;
+    height: 490px;
     opacity: 0.9;
     border: 1px gray solid;
     border-radius: 10px;
@@ -142,6 +142,18 @@
     border-color: #bad80a;
 }
 
+#joinAddr2Input {
+    position: relative;
+    top: 70px;
+    height: 35px;
+    font-size: 13px;
+    border: none;
+    border-bottom: 1.2px solid gray;
+}
+#joinAddr2Input:hover {
+    border-color: #bad80a;
+}
+
 .postBox {
     position: relative;
     top: 38px;
@@ -166,7 +178,7 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     width: 452px;
-    top: 100px;
+    top: 110px;
     right: 66px;
     height: 60px;
     background-color: #864924;

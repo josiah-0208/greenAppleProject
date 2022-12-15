@@ -19,10 +19,11 @@ function View() {
     const [boderBottomState2, setBorderBottomState2] = useState("none");
     const [productPrice, setProductPrice] = useState("");
     let [reviewAmount, setReviewAmount] = useState(0);
-
+    console.log(product);
     useEffect(() => {
         axios.get("/product/view/" + sessionStorage.getItem("productCode"))
             .then((response) => {
+                console.log(response.data)
                 setProduct(response.data)
                 setProductPrice(response.data.price.toLocaleString('ko-KR'));
                 // 최근 본상품
@@ -120,7 +121,7 @@ function View() {
         <div className="container_view">
             <div className="viewTop">
                 <div className="titleImageBox">
-                    <img src={"http://localhost:8080/pdImages/" + product.thumbnail} alt="" id="titleImage" />
+                    <img src={"http://13.124.91.28:8080/pdImages/" + product.thumbnail} alt="" id="titleImage" />
                 </div>
                 <div className="detailOrderBox">
                     <div className="orderBoxReviewCount">
@@ -151,15 +152,19 @@ function View() {
                             <div className="countBox">
                                 <button onClick={(e) => {
                                     e.preventDefault();
-                                    if(quantity > 1) {
+                                    if (quantity > 1) {
                                         setQuantity(quantity - 1)
                                         document.getElementById("inputQuantity").value = quantity - 1
                                     }
                                 }} id="buttonCountDown">-</button>
                                 <input type="number" defaultValue={quantity} onChange={(e) => {
-                                    if(e.target.value < 0 || e.target.value === "0") {
+                                    if (e.target.value < 0 || e.target.value === "0") {
                                         alert("1개 이상 선택해주세요.")
                                         setQuantity(1)
+                                        document.getElementById("inputQuantity").value = 1;
+                                    } else if (e.target.value > product.stock) {
+                                        alert(`'${product.productName}' 상품의 재고는 '${product.stock}'개 입니다.`)
+                                        setQuantity(1);
                                         document.getElementById("inputQuantity").value = 1;
                                     } else {
                                         setQuantity(parseInt(e.target.value))
@@ -167,12 +172,16 @@ function View() {
                                 }} min="0" id="inputQuantity" />
                                 <button onClick={(e) => {
                                     e.preventDefault();
-                                    setQuantity(parseInt(quantity)+1)
-                                    document.getElementById("inputQuantity").value = quantity + 1
+                                    if (product.stock > quantity) {
+                                        setQuantity(parseInt(quantity) + 1)
+                                        document.getElementById("inputQuantity").value = quantity + 1
+                                    } else {
+                                        alert(`'${product.productName}' 상품의 재고는 '${product.stock}'개 입니다.`)
+                                    }
                                 }} id="buttonCountUp">+</button>
                             </div>
                             <div className="orderBoxTotalBox">
-                                합계: <span id="orderBoxTotal">{isNaN(parseInt(totalPrice))?0:totalPrice}</span>
+                                합계: <span id="orderBoxTotal">{isNaN(parseInt(totalPrice)) ? 0 : totalPrice}</span>
                                 <span id="orderBoxTotalWon">원</span>
                             </div>
                         </div>
@@ -201,7 +210,8 @@ function View() {
                     </button>
                 </div>
                 {
-                    viewBottomState ? <ProductDetail productDescription={product.productDescription} />
+                    viewBottomState ? <ProductDetail productDescription={product.productDescription}
+                        fileName={product.fileName} />
                         : <Review productCode={product.productCode} />
                 }
             </div>
@@ -216,6 +226,14 @@ function ProductDetail(props) {
         <div className="container_productdetail">
             <div className="productDetailTitle">
                 상품상세정보
+            </div>
+            <div className="productDetailImgBox">
+                <img className="productDetailImg"
+                    src={"/icons/deliveryInformation.jpg"} />
+            </div>
+            <div className="productDetailImgBox">
+                <img className="productDetailImg"
+                    src={"http://13.124.91.28:8080/pdImages/" + props.fileName} />
             </div>
             <div className="productDetailDescription">
                 {props.productDescription}
@@ -299,12 +317,12 @@ function ImageFile(props) {
     }
 
     const onSubmit = (e) => {
-        
+
         e.preventDefault();
         if (props.updateState === 1) {
-            
+
             let formData = new FormData();
-            for(let i=0; i<e.target.imageInput.files.length; i++) {
+            for (let i = 0; i < e.target.imageInput.files.length; i++) {
                 formData.append("files", e.target.imageInput.files[i]);
             }
             formData.append("productCode", props.productCode);
@@ -338,7 +356,7 @@ function ImageFile(props) {
         } else if (props.updateState === 0) {
 
             let formData = new FormData();
-            for(let i=0; i<e.target.imageInput.files.length; i++) {
+            for (let i = 0; i < e.target.imageInput.files.length; i++) {
                 formData.append("files", e.target.imageInput.files[i]);
             }
             formData.append("productCode", props.productCode);
@@ -431,9 +449,9 @@ function ReviewExpression(props) {
                 <div className="reviewExpressionReviewId">{props.review.id}</div>
                 <div className="reviewExpressionReviewDate">{props.review.reviewDate}</div>
                 <div className="reviewImageBox">
-                    <img src={ props.review.fileName === "" || props.review.fileName === "n" 
-                    ? "/icons/userIcon_Bear.png" : 
-                    "http://localhost:8080/rvImages/" + props.review.fileName} alt=""
+                    <img src={props.review.fileName === "" || props.review.fileName === "n"
+                        ? "/icons/userIcon_Bear.png" :
+                        "http://13.124.91.28:8080/rvImages/" + props.review.fileName} alt=""
                         id="reviewImages"></img>
                 </div>
             </div>

@@ -54,6 +54,9 @@ function Cart() {
                 <div className="cartTitle">
                     장바구니
                 </div>
+                <div className="cartAnnounce">
+                    (수량 입력 후 '엔터')
+                </div>
                 <div className="cartTopBar">
                     <div id="cartBarCheck">
                         선택
@@ -129,8 +132,8 @@ function CartDetail(props) {
 
     let reduxState = useSelector((state) => { return state });
     let dispatch = useDispatch();
-
     let [quantity, setQuantity] = useState(props.cart.amount);
+    const [stock, setStock] = useState(0);
     let [semiTotalPrice, setSemiTotalPrice] = useState(props.cart.price * props.cart.amount);
     let [checked, setChecked] = useState(0);
 
@@ -174,6 +177,13 @@ function CartDetail(props) {
         setSemiTotalPrice(props.cart.price * quantity)
     }, [quantity, props.cart.price])
 
+    // 서버에서 재고 가져오는 것
+    useEffect(() => {
+        axios.get("/product/view/" + props.cart.productCode)
+            .then((res) => {
+                setStock(res.data.stock);
+            })
+    }, [])
 
     // 수량을 바꿀 때마다 서버에 수량 확정 실행되게,
     const setServerQuantityUp = () => {
@@ -218,19 +228,26 @@ function CartDetail(props) {
             })
     }
 
+    let timer;
+
     const cartDelete = () => {
-        axios.get("/cart/delete", {
-            params: {
-                cartNo: props.cart.cartNo,
-            }
+        if (timer) {
+            clearTimeout(timer);
         }
-        )
-            .then((response) => {
-                props.setCartListState(props.cartListState + 1);
-                if (isChecked === 1 || isChecked === true) {
-                    dispatch(changeCartTotalReduxStateMinus(semiTotalPrice))
+        timer = setTimeout(() => {
+            axios.get("/cart/delete", {
+                params: {
+                    cartNo: props.cart.cartNo,
                 }
-            })
+            }
+            )
+                .then((response) => {
+                    props.setCartListState(props.cartListState + 1);
+                    if (isChecked === 1 || isChecked === true) {
+                        dispatch(changeCartTotalReduxStateMinus(semiTotalPrice))
+                    }
+                })
+        }, 200)
     }
 
 
@@ -243,7 +260,7 @@ function CartDetail(props) {
                         id="cartCheckbox" />
                 </div>
                 <div className="cartDetailFruitImageBox">
-                    <img src={"http://localhost:8080/pdImages/" + props.cart.thumbnail} alt="" id="cartDetailFruitImage" />
+                    <img src={"http://13.124.91.28:8080/pdImages/" + props.cart.thumbnail} alt="" id="cartDetailFruitImage" />
                 </div>
                 <div className="cartDetailFruitName">
                     {props.cart.productName}
@@ -270,26 +287,33 @@ function CartDetail(props) {
                                 setQuantity(1)
                                 document.getElementById("inputQuantity" + props.i).value = 1;
                                 setServerQuantityOne();
-                                dispatch(changeCartTotalReduxStatePlus((1*props.cart.price)-(quantity*props.cart.price)))
+                                dispatch(changeCartTotalReduxStatePlus((1 * props.cart.price) - (quantity * props.cart.price)))
+                            } else if (e.target.value > stock) {
+                                alert(`'${props.cart.productName}' 상품의 재고는 '${stock}'개 입니다.`)
                             } else {
                                 setQuantity(parseInt(e.target.value))
                                 setServerQuantity(e.target.value);
                                 if (isChecked === 1 || isChecked === true) {
-                                    console.log(e.target.value*props.cart.price)
-                                    console.log(quantity*props.cart.price)
-                                    dispatch(changeCartTotalReduxStatePlus((e.target.value*props.cart.price)-(quantity*props.cart.price)))
+                                    console.log(e.target.value * props.cart.price)
+                                    console.log(quantity * props.cart.price)
+                                    dispatch(changeCartTotalReduxStatePlus((e.target.value * props.cart.price) - (quantity * props.cart.price)))
                                 }
                             }
                         }
                     }} min="0" id={"inputQuantity" + props.i} className="cartInputQuantity" />
                     <button onClick={(e) => {
                         e.preventDefault();
-                        setQuantity(quantity + 1)
-                        document.getElementById("inputQuantity" + props.i).value = quantity + 1;
-                        setServerQuantityUp();
-                        if (isChecked === true) {
-                            dispatch(changeCartTotalReduxStatePlus(props.cart.price))
+                        if (stock > quantity) {
+                            setQuantity(quantity + 1)
+                            document.getElementById("inputQuantity" + props.i).value = quantity + 1;
+                            setServerQuantityUp();
+                            if (isChecked === true) {
+                                dispatch(changeCartTotalReduxStatePlus(props.cart.price))
+                            }
+                        } else {
+                            alert(`'${props.cart.productName}' 상품의 재고는 '${stock}'개 입니다.`)
                         }
+
                     }} id="buttonCountUp">+</button>
                 </div>
                 <div className="cartDetailSemiTotalPrice">

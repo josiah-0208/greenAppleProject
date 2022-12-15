@@ -22,6 +22,16 @@
     color: rgb(139, 139, 139);
 }
 
+.cartAnnounce {
+    position: relative;
+    top: 25px;
+    left: 55px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: rgb(139, 139, 139);
+}
+
 .cartTopBar {
     display: flex;
     justify-content: space-evenly;

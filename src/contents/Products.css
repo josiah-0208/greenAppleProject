@@ -9,6 +9,21 @@
     
 }
 
+.ifStockZero {
+    position: absolute;
+    width: 267px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    font-size: 2rem;
+    color: white;
+    border-radius: 5px;
+    z-index: 1;
+    opacity: 0.6;
+}
+
 .imageThumbnailBox {
     width: 240px;
     height: 240px;
