@@ -134,7 +134,7 @@ function MyorderDetailObject(props) {
             <div className="myOrderDetailBox">
                 <div className="myOrderDetailTop">
                     <div className="myOrderDetailImageBox">
-                        <img src={"http://localhost:8080/pdImages/" + fruit.thumbnail} alt="" id="myOrderDetailImage" />
+                        <img src={"http://13.124.91.28:8080/pdImages/" + fruit.thumbnail} alt="" id="myOrderDetailImage" />
                     </div>
                 </div>
                 <div className="myOrderDetailMiddle">
@@ -167,7 +167,7 @@ function OrderDetailDescribe(props) {
         e.preventDefault();
         if (window.confirm("정말로 주문을 취소하시겠습니까?")) {
             axios.post("/order/orderDelete", props.order)
-                .then((response) => {
+                .then(() => {
                     props.setOrderListState(props.orderListState + 1);
                 })
         }
@@ -209,6 +209,13 @@ function OrderDetailDescribe(props) {
                             </div>
                             <div className="orderDetailDescribeAddress">
                                 {props.order.address1}
+                            </div>
+                        </div>
+                        <div className="orderDetailDescribeAddressBox">
+                            <div className="orderDetailDescribeAddress">
+                                {
+                                    props.order.address2 ? props.order.address2 : "상세주소 없음"
+                                }
                             </div>
                         </div>
                         <div className="orderDetailDescribeMemoBox">

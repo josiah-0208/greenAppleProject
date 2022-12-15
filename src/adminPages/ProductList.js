@@ -271,59 +271,55 @@ function ProductList() {
                     </table>
                 </div>
                 <div className="productListBottom">
-                    <div>
+                    <div className="productListBottomInsert">
                         <button onClick={() => {
                             navigate("/productInsert")
                         }}>
                             상품 등록하기
                         </button>
                     </div>
-                    <div>
-                        {
-                            startPage > pagePerBlock && // 스타트페이지가 기준페이지보다 크면
-                            <div className="productListLeftDoubleArrowBox">
-                                <img className="productListLeftDoubleArrow" src="/icons/leftDoubleArrow.png"
-                                    onClick={() => {
-                                        paginationLeftDoubleArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                        {
-                            pageNum > 1 && // 페이지넘이 1보다 클 때
-                            <div className="productListLeftArrowBox">
-                                <img className="productListLeftArrow" src="/icons/leftArrow.png"
-                                    onClick={() => {
-                                        paginationLeftArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                    </div>
-                    <div>
-                        {pagination()}
-                    </div>
-                    <div>
-                        {
-                            pageNum < totalPage && // 페이지넘이 전체페이지보다 작을 때
-                            <div className="productListRightArrowBox">
-                                <img className="productListRightArrow" src="/icons/rightArrow.png"
-                                    onClick={() => {
-                                        paginationRightArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
-                        {
-                            endPage < totalPage && // 끝페이지가 전체페이지보다 작을 때
-                            <div className="productListRightDoubleArrowBox">
-                                <img className="productListRightDoubleArrow" src="/icons/rightDoubleArrow.png"
-                                    onClick={() => {
-                                        paginationRightDoubleArrow();
-                                    }}
-                                    alt="" />
-                            </div>
-                        }
+                    <div className="productListBottomPagination">
+                            {
+                                startPage > pagePerBlock && // 스타트페이지가 기준페이지보다 크면
+                                <div className="productListLeftDoubleArrowBox">
+                                    <img className="productListLeftDoubleArrow" src="/icons/leftDoubleArrow.png"
+                                        onClick={() => {
+                                            paginationLeftDoubleArrow();
+                                        }}
+                                        alt="" />
+                                </div>
+                            }
+                            {
+                                pageNum > 1 && // 페이지넘이 1보다 클 때
+                                <div className="productListLeftArrowBox">
+                                    <img className="productListLeftArrow" src="/icons/leftArrow.png"
+                                        onClick={() => {
+                                            paginationLeftArrow();
+                                        }}
+                                        alt="" />
+                                </div>
+                            }
+                            {pagination()}
+                            {
+                                pageNum < totalPage && // 페이지넘이 전체페이지보다 작을 때
+                                <div className="productListRightArrowBox">
+                                    <img className="productListRightArrow" src="/icons/rightArrow.png"
+                                        onClick={() => {
+                                            paginationRightArrow();
+                                        }}
+                                        alt="" />
+                                </div>
+                            }
+                            {
+                                endPage < totalPage && // 끝페이지가 전체페이지보다 작을 때
+                                <div className="productListRightDoubleArrowBox">
+                                    <img className="productListRightDoubleArrow" src="/icons/rightDoubleArrow.png"
+                                        onClick={() => {
+                                            paginationRightDoubleArrow();
+                                        }}
+                                        alt="" />
+                                </div>
+                            }
                     </div>
                 </div>
             </div>
@@ -365,8 +361,8 @@ function ProductListDetail(props) {
             </td>
             <td className="productListDetailThumbnailTd">
                 <div className="productListDetailThumbnail">
-                    <img src={"http://localhost:8080/pdImages/" + props.product.thumbnail} 
-                    className="productListDetailThumbnailImg" alt="" />
+                    <img src={"http://13.124.91.28:8080/pdImages/" + props.product.thumbnail}
+                        className="productListDetailThumbnailImg" alt="" />
                 </div>
             </td>
             <td>

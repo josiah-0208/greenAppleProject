@@ -266,6 +266,20 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-bottom: 25px;
 }
 
+.productDetailImgBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.productDetailImg {
+    width: 80%;
+    height: 30%;
+    object-fit: cover;
+}
+
 .productDetailDescription {
     width: 850px;
     font-family: "KoPubWorldDotumMedium";

@@ -12,11 +12,11 @@ function Header(props) {
     let dispatch = useDispatch();
     const [userModal, setUserModal] = useState(false);
     return (
-        <div className="container_header">  
+        <div className="container_header">
             <div className="headerLogo" onClick={() => {
                 navigate('/');
                 props.setTagState("all");
-                sessionStorage.setItem('tab','all');
+                sessionStorage.setItem('tab', 'all');
                 dispatch(changeHeaderOnClickState(!reduxState.headerOnClickState));
                 dispatch(changeKeyword(""));
                 document.getElementById("searchInput").value = "";
@@ -25,13 +25,13 @@ function Header(props) {
             </div>
             <div className="searchInputArea">
                 <input type="text" onKeyDown={(e) => {
-                    if(e.key === "Enter") { 
+                    if (e.key === "Enter") {
                         dispatch(changeKeyword(e.target.value))
                         dispatch(changeSearchEnterState(reduxState.searchEnterState + 1))
                         navigate('/')
                         sessionStorage.setItem('tab', 'all');
                     }
-                }} placeholder="검색" id="searchInput"/>
+                }} placeholder="검색" id="searchInput" />
                 <div className="loupeIconBox">
                     <img src="/icons/loupeGray.png" alt="" id="loupeIcon" />
                 </div>
@@ -88,6 +88,16 @@ function SwitchUser(props) {
                     onMouseLeave={() => { props.setUserModal(false) }}>
                     <img src="/icons/userIcon_Bear.png" alt="" className="userIconImage" />
                 </div>
+                {
+                    localStorage.getItem('id') === "admin" &&
+                    <div className="adminBtnBox">
+                        <button className="adminBtn" onClick={() => {
+                            navigate("/admin")
+                        }}>
+                            ADMIN
+                        </button>
+                    </div>
+                }
             </div>
         )
     }
@@ -117,11 +127,11 @@ function Userbar(props) {
                 </div>
                 <div className="userBarBottom" onClick={() => {
                     axios.get('/logout')
-                    .then(() => {
-                        localStorage.removeItem('id')
-                        dispatch(changeLoginState("false"));
-                        navigate("/");
-                    })
+                        .then(() => {
+                            localStorage.removeItem('id')
+                            dispatch(changeLoginState("false"));
+                            navigate("/");
+                        })
                 }}>
                     <img src="/icons/logout.png" id="logout" alt="" />
                     <span id="logoutText">로그아웃</span>

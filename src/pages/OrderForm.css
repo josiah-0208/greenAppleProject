@@ -247,6 +247,7 @@
 
 .orderMemberAddressBox {
     /* 이 박스 높이를 널널하게 정해놔야 addr2가 들어와도 비율 안깨짐 */
+    display: flex;
     position: relative;
     left: 58px;
     width: 700px;
@@ -309,6 +310,47 @@
     outline: none;
     border: 1px solid #bad80a;
 }
+
+.orderMemberAddressRight {
+    position: relative;
+    left: 70px;
+}
+
+.orderMemberAddress2 {
+    position: relative;
+    top: 5px;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 16px;
+    color: rgb(60, 60, 60);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.orderMemberAddressBoxBottom2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+#orderMemberAddressInput2 {
+    position: relative;
+    width: 293px;
+    height: 30px;
+    border: 1px solid gray;
+    background-color: white;
+    font-family: "KoPubWorldDotumMedium";
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding-left: 5px;
+    border-radius: 3px;
+}
+#orderMemberAddressInput2:focus {
+    outline: none;
+    border: 1px solid #bad80a;
+}
+
 
 .orderMemoBox {
     display: flex;

@@ -37,7 +37,6 @@ function App() {
   useEffect(() => {
     axios.get("/member/session")
     .then((response) => {
-      console.log(response.data)
       if (response.data === null) {
         localStorage.removeItem('id');
         dispatch(changeLoginState("false"));
@@ -141,7 +140,7 @@ function WatchedImage(props) {
       navigate('/product/view/' + fruit.productCode)
       dispatch(changeWatchedState(!reduxstate.watchedState))
     }} >
-      <img src={"http://localhost:8080/pdImages/" + fruit.thumbnail} alt="" id="watchedImage" />
+      <img src={"http://13.124.91.28:8080/pdImages/" + fruit.thumbnail} alt="" id="watchedImage" />
     </div>
   )
 }

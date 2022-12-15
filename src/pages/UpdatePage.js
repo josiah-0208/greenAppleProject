@@ -9,7 +9,8 @@ function UpdatePage() {
     let [member, setMember] = useState({});
     let [pw, setPw] = useState("");
     let [tel, setTel] = useState("");
-    let [addr, setAddr] = useState(member.address1);
+    let [addr, setAddr] = useState("");
+    const [addr2, setAddr2] = useState("");
     let [postPopUpState, setPostPopUpState] = useState(false);
 
     let navigate = useNavigate();
@@ -26,6 +27,7 @@ function UpdatePage() {
                 setMember(response.data)
                 setTel(response.data.tel)
                 setAddr(response.data.address1)
+                setAddr2(response.data.address2)
             })
             .catch(() => {
                 console.log("회원정보가 존재하지 않습니다.");
@@ -49,7 +51,7 @@ function UpdatePage() {
             name: member.name,
             tel: tel,
             address1: addr,
-            address2: ""
+            address2: addr2,
         }
         axios.post("/member/update", body)
             .then((response) => {
@@ -108,6 +110,11 @@ function UpdatePage() {
                             onChange={(e) => {
                                 setAddr(e.target.value)
                             }} />
+                    </div>
+                    <div className="postBoxUpdate2">
+                        <div id="addressLabel2">상세주소</div>
+                        <input type="text" defaultValue={addr2 || ""} id="address2Input"
+                            onChange={(e) => { setAddr2(e.target.value) }} required/>
                     </div>
                     <div className="updateFormBottom">
                         <button className="updateButton" type="submit" >수정 완료</button>

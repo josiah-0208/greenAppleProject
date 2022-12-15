@@ -32,28 +32,36 @@ function Products(props) {
                 id: localStorage.getItem('id'),
                 productCode: props.fruit.productCode,
                 amount: 1,
-                
+
             }
             axios.post("/cart/add", body)
-            .then((response) => {
-            })
-            .catch((response) => {
-                console.log("장바구니 추가를 실패하였습니다.")
-            })
+                .then((response) => {
+                })
+                .catch((response) => {
+                    console.log("장바구니 추가를 실패하였습니다.")
+                })
         } else {
             alert("로그인을 해주세요.");
         }
-        
-    }
 
+    }
 
     return (
         <div className="container_products" onClick={() => {
             navigate('/product/view/' + props.fruit.productCode)
             sessionStorage.setItem('productCode', props.fruit.productCode)
         }}>
+            {
+                props.fruit.stock === 0 &&
+                <div className="ifStockZero" onClick={(e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }} >
+                    SOLDOUT
+                </div>
+            }
             <div className="imageThumbnailBox">
-                <img className="imageThumbnail" src={"http://localhost:8080/pdImages/" + props.fruit.thumbnail} alt=""
+                <img className="imageThumbnail" src={"http://13.124.91.28:8080/pdImages/" + props.fruit.thumbnail} alt=""
                     onMouseEnter={() => { setImageThumbnailBoxBottom(1) }}
                     onMouseLeave={() => { setImageThumbnailBoxBottom(0) }} />
                 {
@@ -68,7 +76,7 @@ function Products(props) {
                                     onMouseLeave={() => { setDetailIconState("viewDetailsGray.png") }} />
                             </div>
                             <div className="cartIconImageBox" onClick={cartOnClick}>
-                            <img src={"/icons/" + cartIconState} alt=""
+                                <img src={"/icons/" + cartIconState} alt=""
                                     className="cartIconImage"
                                     onMouseEnter={() => { setCartIconState("shoppingCartBrown.png") }}
                                     onMouseLeave={() => { setCartIconState("shoppingCartGray.png") }} />
