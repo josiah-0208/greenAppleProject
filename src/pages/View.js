@@ -451,7 +451,7 @@ function ReviewExpression(props) {
                 <div className="reviewImageBox">
                     <img src={props.review.fileName === "" || props.review.fileName === "n"
                         ? "/icons/userIcon_Bear.png" :
-                        "http://13.124.91.28:8080/rvImages/" + props.review.fileName} alt=""
+                        "http://13.124.91.28:8080/pdImages/" + props.review.fileName} alt=""
                         id="reviewImages"></img>
                 </div>
             </div>
