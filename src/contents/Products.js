@@ -51,15 +51,6 @@ function Products(props) {
             navigate('/product/view/' + props.fruit.productCode)
             sessionStorage.setItem('productCode', props.fruit.productCode)
         }}>
-            {
-                props.fruit.stock === 0 &&
-                <div className="ifStockZero" onClick={(e) => {
-                    e.stopPropagation();
-                    e.preventDefault();
-                }} >
-                    SOLDOUT
-                </div>
-            }
             <div className="imageThumbnailBox">
                 <img className="imageThumbnail" src={"http://13.124.91.28:8080/pdImages/" + props.fruit.thumbnail} alt=""
                     onMouseEnter={() => { setImageThumbnailBoxBottom(1) }}
@@ -95,6 +86,15 @@ function Products(props) {
             <div className="reviewAmountBox">
                 (리뷰 : {reviewAmount}개)
             </div>
+            {
+                props.fruit.stock === 0 &&
+                <div className="ifStockZero" onClick={(e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }} >
+                    SOLDOUT
+                </div>
+            }
         </div>
     )
 }
