@@ -162,15 +162,6 @@ function OrderForm() {
                                     }
                                 }} required id="orderMemberTelInput" />
                             </div>
-                            <div className="orderMemberEmailBox">
-                                <div className="orderMemberEmail">
-                                    이메일
-                                </div>
-                                <input type="text" onChange={(e) => {
-                                    setEmail(e.target.value)
-                                }} placeholder="이메일 형식에 맞게 입력해주세요."
-                                    required id="orderMemberEmailInput" />
-                            </div>
                         </div>
                         <div className="orderMemberAddressBox">
                             <div>
