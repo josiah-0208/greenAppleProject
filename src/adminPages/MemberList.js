@@ -312,18 +312,6 @@ function MemberListDetail(props) {
 
     const [tel, setTel] = useState("")
 
-    useEffect(() => {                   // 받은 멤버 전화번호를 문자열로 만들어서 - 입력
-
-        let telCopy = props.member.tel + "";
-        if (telCopy.length === 10) {
-            setTel(telCopy.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'));
-        }
-        if (telCopy.length === 11) {
-            setTel(telCopy.replace(/-/g, '').replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3'));
-        }
-
-    }, []);
-
     const memberListDetailDelteBtn = () => {
         let body = {
             id: props.member.id
@@ -350,7 +338,7 @@ function MemberListDetail(props) {
             </td>
             <td>
                 <div className="memberListDetailTel">
-                    {tel}
+                    {props.member.tel}
                 </div>
             </td>
             <td>
