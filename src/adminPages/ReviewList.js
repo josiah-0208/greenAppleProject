@@ -27,7 +27,6 @@ function ReviewList() {
 
         axios.post("/admin/reviewList", body)
             .then((res) => {
-                console.log(res.data)
                 setReviewList(res.data.reviewList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -45,7 +44,6 @@ function ReviewList() {
 
         axios.post("/admin/reviewList", body)
             .then((res) => {
-                console.log(res.data)
                 setReviewList(res.data.reviewList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -63,7 +61,6 @@ function ReviewList() {
 
         axios.post("/admin/reviewList", body)
             .then((res) => {
-                console.log(res.data)
                 setReviewList(res.data.reviewList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);

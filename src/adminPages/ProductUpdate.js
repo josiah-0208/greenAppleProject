@@ -20,7 +20,6 @@ function ProductUpdate() {
 
         axios.get("/product/view/" + sessionStorage.getItem("updateProductCode"))
         .then((res) => {
-            console.log(res.data)
             setProduct(res.data);
             setInsertName(res.data.productName);
             setInsertOrigin(res.data.origin);
@@ -94,7 +93,6 @@ function ProductUpdate() {
         formData.append("stock", insertStock);
         formData.append("productDescription", insertProductDescription);
         
-        console.log(formData.values)
 
         axios(
             {
@@ -107,7 +105,6 @@ function ProductUpdate() {
                 }
             }
         ).then((res) => {
-            console.log(res.data)
             if (res.data === 1 || res.data === 2) {
                 navigate("/admin")
             }

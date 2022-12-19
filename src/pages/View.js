@@ -19,11 +19,9 @@ function View() {
     const [boderBottomState2, setBorderBottomState2] = useState("none");
     const [productPrice, setProductPrice] = useState("");
     let [reviewAmount, setReviewAmount] = useState(0);
-    console.log(product);
     useEffect(() => {
         axios.get("/product/view/" + sessionStorage.getItem("productCode"))
             .then((response) => {
-                console.log(response.data)
                 setProduct(response.data)
                 setProductPrice(response.data.price.toLocaleString('ko-KR'));
                 // 최근 본상품
@@ -94,10 +92,8 @@ function View() {
             }
             axios.post("/cart/add", body)
                 .then((response) => {
-                    console.log(response.data);
                 })
                 .catch((response) => {
-                    console.log("장바구니 추가를 실패하였습니다.")
                 })
         } else {
             alert("로그인을 해주세요.")
@@ -258,7 +254,6 @@ function Review(props) {
                 setProductReviews(response.data)
             })
             .catch(() => {
-                console.log("리뷰 로드 실패")
             })
     }, [reviewListOnChange, props.productCode])
 
@@ -338,7 +333,6 @@ function ImageFile(props) {
                 },
             })
                 .then(response => {
-                    console.log(response.data);
                     if (response.data === 1 || response.data === 2) {
                         dispatch(changeUpdateReviewText(""));
                         setFileImage("/icons/previewPhoto.png");
@@ -362,7 +356,6 @@ function ImageFile(props) {
             formData.append("productCode", props.productCode);
             formData.append("content", reduxstate.updateReviewText);
             formData.append("reviewId", reduxstate.updateReviewId);
-            console.log(formData);
 
             axios({
                 url: '/review/update',
@@ -373,7 +366,6 @@ function ImageFile(props) {
                     'Content-Type': 'multipart/form-data',
                 },
             }).then((response) => {
-                console.log("responsedata" + response.data)
                 if (response.data === 1 || response.data === 2) {
                     dispatch(changeUpdateReviewText(""));
                     setFileImage("/icons/previewPhoto.png");
@@ -463,7 +455,6 @@ function ReviewExpression(props) {
                     <div className="userChkArea">
                         <div className="reviewExpressionUpdateBox" onClick={() => {
                             props.setUpdateState(0);
-                            console.log(props.review.reviewId)
                             document.getElementById("reviewTextInput").value = props.review.content;
                             dispatch(changeUpdateReviewText(props.review.content));
                             dispatch(changeReviewId(props.review.reviewId + ""));

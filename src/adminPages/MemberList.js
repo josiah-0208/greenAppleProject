@@ -45,7 +45,6 @@ function MemberList() {
 
         axios.post("/admin/memberList", body)
             .then((res) => {
-                console.log(res.data)
                 setMemberList(res.data.memberList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -316,7 +315,6 @@ function MemberListDetail(props) {
     useEffect(() => {                   // 받은 멤버 전화번호를 문자열로 만들어서 - 입력
 
         let telCopy = props.member.tel + "";
-        console.log(telCopy)
         if (telCopy.length === 10) {
             setTel(telCopy.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'));
         }
@@ -335,7 +333,6 @@ function MemberListDetail(props) {
                 if (res.data === 1) {
                     props.memberListAftDelete();
                 }
-                console.log(res.data)
             })
     }
 

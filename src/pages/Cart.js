@@ -17,17 +17,11 @@ function Cart() {
     const [cartTotalPriceState, setCartTotalPriceState] = useState(0);
     const [cartDetailPriceArr, setCartDetailPriceArr] = useState([]);
     useEffect(() => {
-        console.log("실행2-1")
         axios.get("/cart")
             .then((response) => {
                 setCarts(response.data);
-                console.log(response)
-                console.log(response.data)
-                console.log("실행2-2")
             })
             .catch((response) => {
-                console.log("장바구니 조회 실패")
-                console.log("실행2-3")
             })
     }, [cartListState])
 
@@ -106,7 +100,6 @@ function Cart() {
                     </div>
                     <div>
                         <button id="cartOrderButton" onClick={() => {
-                            console.log(carts)
                             if (carts.length === 0) {
                                 alert("장바구니가 비었습니다.")
                             } else {
@@ -149,7 +142,6 @@ function CartDetail(props) {
 
     useEffect(() => {
         if (isChecked === 1 || isChecked === true) {
-            console.log(props.i)
             dispatch(changeCartTotalReduxStatePlus(semiTotalPrice))
             setChecked(1)
             let body = {
@@ -194,7 +186,6 @@ function CartDetail(props) {
         }
         axios.post("/cart/update", body)
             .then((response) => {
-                console.log(response)
             })
     }
     const setServerQuantityDown = () => {
@@ -294,8 +285,6 @@ function CartDetail(props) {
                                 setQuantity(parseInt(e.target.value))
                                 setServerQuantity(e.target.value);
                                 if (isChecked === 1 || isChecked === true) {
-                                    console.log(e.target.value * props.cart.price)
-                                    console.log(quantity * props.cart.price)
                                     dispatch(changeCartTotalReduxStatePlus((e.target.value * props.cart.price) - (quantity * props.cart.price)))
                                 }
                             }

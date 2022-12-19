@@ -30,7 +30,6 @@ function ProductList() {
 
         axios.post("/admin/productList", body)
             .then((res) => {
-                console.log(res.data)
                 setProductList(res.data.productList);
                 setPageNum(res.data.currentPage);
                 setStartPage(res.data.startPage);
@@ -348,7 +347,6 @@ function ProductListDetail(props) {
                 if (res.data === 1) {
                     props.productListAftDelete();
                 }
-                console.log(res.data)
             })
     }
 

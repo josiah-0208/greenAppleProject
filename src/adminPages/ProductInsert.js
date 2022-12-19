@@ -67,7 +67,6 @@ function ProductInsert() {
         formData.append("stock", insertStock);
         formData.append("productDescription", insertProductDescription);
         
-        console.log(formData.values)
 
         axios(
             {

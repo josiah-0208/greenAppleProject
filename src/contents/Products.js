@@ -38,7 +38,6 @@ function Products(props) {
                 .then((response) => {
                 })
                 .catch((response) => {
-                    console.log("장바구니 추가를 실패하였습니다.")
                 })
         } else {
             alert("로그인을 해주세요.");

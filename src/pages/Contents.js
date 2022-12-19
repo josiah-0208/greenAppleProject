@@ -36,7 +36,6 @@ function Contents(props) {
     const getFruits = useCallback(async () => {
         setLoading(true);
         if (tagState === 'all') {
-            console.log("실행 1")
             await axios.get("/product", {
                 params: {
                     keyword: reduxState.keyword,
@@ -45,16 +44,10 @@ function Contents(props) {
             })
                 .then((response) => {
                     setFruits(response.data)
-                    console.log(response.data)
-                    console.log(response)
-                    console.log("실행 2")
                 })
                 .catch(() => {
-                    console.log('상품 로드 실패');
-                    console.log("실행 3")
                 })
         } else {
-            console.log("실행 4")
             await axios.get("/product/seasonal/" + seasonalValue, {
                 params: {
                     seasonal: seasonalValue,
@@ -62,12 +55,9 @@ function Contents(props) {
                 }
             })
                 .then((response) => {
-                    console.log("실행 5")
                     setFruits(response.data);
                 })
                 .catch(() => {
-                    console.log("실행 6")
-                    console.log('상품 로드 실패');
                 })
         }
         setLoading(false);
