@@ -29,8 +29,7 @@ function MyorderObject() {
     useEffect(() => {
         axios.post("/order/orderList")
             .then((response) => {
-                const reverse = response.data.reverse();
-                setOrderList(reverse);
+                setOrderList(response.data);
             })
     }, [orderListState])
 
