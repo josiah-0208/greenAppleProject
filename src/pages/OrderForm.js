@@ -59,7 +59,6 @@ function OrderForm() {
         } else {
             axios.post("/product/nowOrder", body)
                 .then((response) => {
-                    console.log(response.data)
                     let cart = response.data;
                     setDetailList([cart]);
                     setCarts([cart]);
@@ -93,7 +92,6 @@ function OrderForm() {
         }
         axios.post("/order/orderInsert", body)
             .then((response) => {
-                console.log(response.data);
                 navigate("/myOrder");
             })
     }
@@ -322,11 +320,8 @@ function Payment(props) {
     // request_pay에 콜백하는 함수
     const callback = (response) => {
         if (response.success) {
-            console.log("성공")
-            console.log(response.success)
             props.paymentSuccess();
         } else {
-            console.log("실패")
         }
     }
 

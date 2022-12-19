@@ -40,11 +40,8 @@ function Join() {
         }
         axios.post('/join', body)
             .then((response) => {
-                console.log(response.data)
             })
             .catch((response) => {
-                console.log(response.data)
-                console.log('회원가입을 실패하였습니다.')
             })
         navigate("/");
     }
@@ -59,15 +56,12 @@ function Join() {
 
     const idChk = (e) => {
         e.preventDefault();
-        console.log("실행되나2")
         axios.get("/join/idCheck", {
             params: {
                 id: id
             }
         })
             .then((response) => {
-                console.log(response)
-                console.log(response.data)
                 if (response.data === 1) {
                     setIdChkState("black")
                     setIdChkStateOk(0)

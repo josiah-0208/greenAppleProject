@@ -30,7 +30,6 @@ function UpdatePage() {
                 setAddr2(response.data.address2)
             })
             .catch(() => {
-                console.log("회원정보가 존재하지 않습니다.");
             })
     }, [sessionId])
 
@@ -55,13 +54,11 @@ function UpdatePage() {
         }
         axios.post("/member/update", body)
             .then((response) => {
-                console.log(response.data)
                 navigate("/updatePage")
                 alert("회원 수정 완료.")
                 document.getElementById("passwordInput").value = ""
             })
             .catch((response) => {
-                console.log('정보 수정을 실패하였습니다.')
             })
     }
 

@@ -22,7 +22,6 @@ function Loginpage(props) {
         }
         axios.post('/login', body)
             .then((response) => {
-                console.log(response);
                 if (response.data === 1) {
                     localStorage.setItem('id', id);
                     dispatch(changeLoginState("true"));
@@ -35,7 +34,6 @@ function Loginpage(props) {
                 }
             })
             .catch((response) => {
-                console.log(response);
                 alert('로그인 실패');
                 navigate("/loginPage")
             })

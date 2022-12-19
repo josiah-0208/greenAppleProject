@@ -119,7 +119,6 @@ function MyorderDetail(props) {
 function MyorderDetailObject(props) {
 
     let [fruit, setFruit] = useState({});
-    console.log(props.order)
 
     useEffect(() => {
         axios.get("/product/view/" + props.orderDetail.productCode)
@@ -161,7 +160,6 @@ function MyorderDetailObject(props) {
 
 function OrderDetailDescribe(props) {
 
-    console.log(props.order.orderDel)
     const onClickOrderDetail = (e) => {
         e.preventDefault();
         if (window.confirm("정말로 주문을 취소하시겠습니까?")) {
