@@ -4,7 +4,7 @@
 > **서비스 주소**
 
 http://13.124.91.28/   
-관리자 ID : admin PW : admin<br><br>
+관리자 `ID : admin` `PW : admin`<br><br>
 
 
 
@@ -16,7 +16,7 @@ http://13.124.91.28/
 쇼핑몰의 전반적인 기능을 구현하였습니다.
 
 
-> **기간** 22/10 ~ 22/12 (9주)
+> **기간** 22/10 ~ 22/12 *(9주)*
 
 
 > **인원** 2명
@@ -32,12 +32,12 @@ http://13.124.91.28/
 > **사용 기술**
 
 | 분류 | 종류 |
-|:---:|:---:|
-| **언어** | JavaScript, HTML, CSS, Java |
-| **Lib & F/W** | React, Spring Boot, SQL Developer |
-| **DB** | Oracle | 
-| **서버** | NGINX, Tomcat |
-| **배포** | AWS EC2 |
+|:---:|---|
+| **언어** | `JavaScript`, `HTML`, `CSS`, `Java` |
+| **Lib & F/W** | `React`, `Spring Boot`, `SQL Developer` |
+| **DB** | `Oracle` | 
+| **서버** | `NGINX`, `Tomcat` |
+| **배포** | `AWS EC2` |
 
 
 
