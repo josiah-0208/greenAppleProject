@@ -6,7 +6,7 @@
 http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : admin`<br><br>
 
 
-## 개요
+## 📝 개요
 
 > **설명**
 
@@ -35,7 +35,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <br>
 
 
-## 주요 화면 & 기능 소개
+## 💻 주요 화면 & 기능 소개
 
 > **메인 화면**
 <p align="center">
@@ -100,9 +100,9 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <br/><br/>
 
 
-## ERD
+## 📋 ERD
 
-## 보완 & 느낀점
+## 💭 보완 & 느낀점
 
 #### 아쉬운 부분
 
