@@ -79,6 +79,8 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 > **주문서 & 주문 내역**
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210952158-099df9d6-60f8-469d-b05f-6cc10517200c.png" width="100%"></p>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/112552585/210974496-fb5cd48a-50ea-4166-b5a8-f811f7e6d72f.png" width="100%"></p>
 
 * 결제 api 사용
 <br/><br/>
@@ -88,7 +90,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210952323-9244ddb3-8fe1-4b67-97e5-422fd482f303.png" width="100%"></p>
 
-* 상품, 회원, 리뷰를 탭으로 나누어, 한 페이지에서 관리
+* 상품, 회원, 리뷰를 탭으로 나누어 한 페이지에서 관리
 * 검색, 페이지네이션 기능
 <br/><br/>
 
