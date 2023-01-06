@@ -43,7 +43,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 
 * 서버 데이터를 Axios로 받아 처리
 * 페이지네이션 대신, 무한 스크롤 사용
-* SessionStorage를 사용하여, 최근 본 상품 구현
+* sessionStorage를 사용하여, 최근 본 상품 구현
 * 탭, 검색 기능
 <br/><br/>
 
@@ -78,9 +78,9 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 
 > **주문서 & 주문 내역**
 <p align="center">
-<img src="https://user-images.githubusercontent.com/112552585/210952158-099df9d6-60f8-469d-b05f-6cc10517200c.png" width="100%"></p>
-<p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210974496-fb5cd48a-50ea-4166-b5a8-f811f7e6d72f.png" width="100%"></p>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/112552585/210952158-099df9d6-60f8-469d-b05f-6cc10517200c.png" width="100%"></p>
 
 * 결제 api 사용
 <br/><br/>
