@@ -44,8 +44,8 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210952150-54143541-e611-4366-832c-8f1338171baf.png" width="49%">
 <img src="https://user-images.githubusercontent.com/112552585/210952158-099df9d6-60f8-469d-b05f-6cc10517200c.png" width="49%"></p>
 
-* axios를 사용해 서버에서 상품 데이터를 받아 배열
-* 페이지네이션 대신, 무한스크롤 사용
+* 서버 데이터를 Axios로 받아 처리
+* 페이지네이션 대신, 무한 스크롤 사용
 * SessionStorage를 사용하여, 최근 본 상품 구현
 * 탭, 검색 기능
 <br/><br/>
@@ -57,7 +57,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210948691-e3fa4cf4-00bb-4cce-aa75-aff8bbb584a7.png" width="49%"></p>
 
 * 주소 api 사용
-* 핸드폰 번호 입력 시 자동 하이픈('-') 추가
+* 핸드폰 번호 입력 시, 자동 하이픈('-') 추가
 <br/><br/>
 
 
@@ -66,8 +66,8 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210947391-ed0be725-29af-4a44-9f81-10927305792d.png" width="49%">
 <img src="https://user-images.githubusercontent.com/112552585/210955159-95cb0d15-d2e1-4bac-8534-d17aa80c09a7.gif" width="49%"></p>
 
-* 바로 구매, 장바구니 추가
-* 파일 업로드 리뷰 작성
+* 상품 상세 화면에서 바로 구매, 장바구니 추가 기능
+* 이미지 리뷰는 Form-Data로 처리
 <br/><br/>
 
 
@@ -76,7 +76,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210952073-f5917216-031c-4160-b024-75edae20242c.png" width="49%">
 <img src="https://user-images.githubusercontent.com/112552585/210957044-8e709767-4984-424c-b1a9-d6adf9f24376.gif" width="49%"></p>
 
-* Redux를 사용하여 장바구니 데이터 관리
+* Redux를 사용하여, 장바구니 데이터 관리
 <br/><br/>
 
 
@@ -85,7 +85,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210956009-5311ef6f-1c7b-4d0d-a3a9-aecf8b0d534e.gif" width="49%">
 <img src="https://user-images.githubusercontent.com/112552585/210952158-099df9d6-60f8-469d-b05f-6cc10517200c.png" width="49%"></p>
 
-* 이니시스 결제 api 사용
+* 결제 api 사용
 <br/><br/>
 
 
@@ -95,6 +95,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210956350-758f0919-6627-4128-8aaa-0e6f96f0fc82.gif" width="49%"></p>
 <p align="center">
 
+* 상품, 회원, 리뷰를 탭으로 나누어, 한 페이지에서 관리
 * 검색, 페이지네이션 기능
 <br/><br/>
 
