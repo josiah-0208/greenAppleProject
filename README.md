@@ -67,7 +67,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210955159-95cb0d15-d2e1-4bac-8534-d17aa80c09a7.gif" width="49%"></p>
 
 * 상품 상세 화면에서 바로 구매, 장바구니 추가 기능
-* 이미지 리뷰는 Form-Data로 처리
+* 리뷰 이미지 업로드는 Form-Data로 처리
 <br/><br/>
 
 
