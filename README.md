@@ -101,6 +101,9 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 
 
 ## 📋 ERD
+<p align="center">
+<img src="https://user-images.githubusercontent.com/112552585/210970387-eca47bd5-a074-4936-aec6-e9370196ca2d.PNG" width="70%"></p>
+
 
 ## 💭 보완 & 느낀점
 
