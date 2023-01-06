@@ -3,9 +3,7 @@
 
 > **서비스 주소**
 
-http://13.124.91.28/   
-관리자 `ID : admin` `PW : admin`<br><br>
-
+http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : admin`<br><br>
 
 
 ## 개요
@@ -15,19 +13,15 @@ http://13.124.91.28/
 과일 판매를 컨텐츠로 한 쇼핑몰입니다.   
 쇼핑몰의 전반적인 기능을 구현하였습니다.   
 
-
 > **기간** 22/10 ~ 22/12 *(9주)*
 
-
 > **인원** 2명
-
 
 > **나의 역할**
 
  * 프로젝트 모델 계획
  * React를 이용한 화면 구현
  * AWS EC2 배포
-
 
 > **사용 기술**
 
@@ -37,20 +31,36 @@ http://13.124.91.28/
 | **Lib & F/W** | `React`, `Spring Boot`, `SQL Developer` |
 | **DB** | `Oracle` | 
 | **서버** | `NGINX`, `Tomcat` |
-| **배포** | `AWS EC2` |
+| **배포** | `AWS EC2` |<br>
+<br>
 
 
-## 화면 소개
+## 주요 화면 & 기능 소개
 
-> 메인 화면
-* 서버에서 상품을 받아와 map함수로 진열
-* 무한스크롤 사용
+> **메인 화면**
+<p align="center">
+<img src="https://user-images.githubusercontent.com/112552585/210949661-418bd51a-cc8d-4eff-b894-ec7fee7efa9d.png" width="80%"></p>
+
+* axios를 사용해 서버에서 상품 데이터를 받아 배열
+* 페이지네이션 대신, 무한스크롤 사용
 * SessionStorage를 사용하여, 최근 본 상품 구현
-* 탭, 검색 기능
+* 탭, 검색 기능<br><br>
 
-> 상품 상세
-<img src="https://user-images.githubusercontent.com/112552585/210944725-d8d707b7-3a2a-453f-b393-83e143704d4a.gif">
 
+> **회원가입, 로그인**
+<p align="center">
+<img src="https://user-images.githubusercontent.com/112552585/210948687-297458ee-c12f-4ead-9153-97e519297954.png" width="49%">
+<img src="https://user-images.githubusercontent.com/112552585/210948691-e3fa4cf4-00bb-4cce-aa75-aff8bbb584a7.png" width="49%"></p>
+
+* 주소 api 사용
+* 핸드폰 번호 입력 시 자동 하이픈('-') 추가
+
+
+> **상품 상세 화면**
+<p align="center">
+<img src="https://user-images.githubusercontent.com/112552585/210947391-ed0be725-29af-4a44-9f81-10927305792d.png" width="80%"></p>
+
+                                                                                                                             
 ## ERD
 
 ## 보완 & 느낀점
