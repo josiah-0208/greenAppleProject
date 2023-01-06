@@ -73,7 +73,8 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 
 > **장바구니**
 <p align="center">
-<img src="https://user-images.githubusercontent.com/112552585/210952073-f5917216-031c-4160-b024-75edae20242c.png" width="85%"></p>
+<img src="https://user-images.githubusercontent.com/112552585/210952073-f5917216-031c-4160-b024-75edae20242c.png" width="49%">
+<img src="https://user-images.githubusercontent.com/112552585/210957044-8e709767-4984-424c-b1a9-d6adf9f24376.gif" width="49%"></p>
 
 * Redux를 사용하여 장바구니 데이터 관리
 <br/><br/>
@@ -81,10 +82,8 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 
 > **주문서 & 주문 내역**
 <p align="center">
-<img src="https://user-images.githubusercontent.com/112552585/210952150-54143541-e611-4366-832c-8f1338171baf.png" width="49%">
-<img src="https://user-images.githubusercontent.com/112552585/210956009-5311ef6f-1c7b-4d0d-a3a9-aecf8b0d534e.gif" width="49%"></p>
-<p align="center">
-<img src="https://user-images.githubusercontent.com/112552585/210952158-099df9d6-60f8-469d-b05f-6cc10517200c.png" width="65%"></p>
+<img src="https://user-images.githubusercontent.com/112552585/210956009-5311ef6f-1c7b-4d0d-a3a9-aecf8b0d534e.gif" width="49%">
+<img src="https://user-images.githubusercontent.com/112552585/210952158-099df9d6-60f8-469d-b05f-6cc10517200c.png" width="49%"></p>
 
 * 이니시스 결제 api 사용
 <br/><br/>
