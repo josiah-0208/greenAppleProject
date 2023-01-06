@@ -40,7 +40,6 @@ http://13.124.91.28/
 | **배포** | `AWS EC2` |
 
 
-
 ## 화면 소개
 
 > 메인 화면
@@ -49,6 +48,8 @@ http://13.124.91.28/
 * SessionStorage를 사용하여, 최근 본 상품 구현
 * 탭, 검색 기능
 
+> 상품 상세
+<img src="https://user-images.githubusercontent.com/112552585/210944725-d8d707b7-3a2a-453f-b393-83e143704d4a.gif">
 
 ## ERD
 
