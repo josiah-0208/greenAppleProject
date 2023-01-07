@@ -41,22 +41,21 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210949661-418bd51a-cc8d-4eff-b894-ec7fee7efa9d.png" width="100%"></p>
 
-* 서버 데이터를 Axios로 받아 처리
-* 페이지네이션 대신, 무한 스크롤 사용
-* sessionStorage를 사용하여, 최근 본 상품 구현
+* 서버 데이터를 **Axios**로 받아 처리
+* 페이지네이션 대신, **무한 스크롤** 사용
+* **sessionStorage**를 사용하여, 최근 본 상품 구현
 * 탭, 검색 기능
 <br/><br/>
 
 
------------------------------------------------------
 > **회원가입, 로그인**
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210948687-297458ee-c12f-4ead-9153-97e519297954.png" width="100%"></p>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210948691-e3fa4cf4-00bb-4cce-aa75-aff8bbb584a7.png" width="100%"></p>
 
-* 주소 api 사용
-* 핸드폰 번호 입력 시, 자동 하이픈('-') 추가
+* **주소 api** 사용
+* 핸드폰 번호 입력 시, **자동 하이픈**('-') 추가
 <br/><br/>
 
 
@@ -66,7 +65,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210947391-ed0be725-29af-4a44-9f81-10927305792d.png" width="100%"></p>
 
 * 상품 상세 화면에서 바로 구매, 장바구니 추가
-* 리뷰 이미지 업로드는 Form-Data로 처리
+* **리뷰 이미지 업로드**는 Form-Data로 처리
 <br/><br/>
 
 
@@ -75,7 +74,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210952073-f5917216-031c-4160-b024-75edae20242c.png" width="100%"></p>
 
-* Redux를 사용하여, 장바구니 데이터 관리
+* **Redux**를 사용하여, 장바구니 데이터 관리
 <br/><br/>
 
 
@@ -86,7 +85,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210952158-099df9d6-60f8-469d-b05f-6cc10517200c.png" width="100%"></p>
 
-* 결제 api 사용
+* **결제 api** 사용
 <br/><br/>
 
 
@@ -96,7 +95,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210952323-9244ddb3-8fe1-4b67-97e5-422fd482f303.png" width="100%"></p>
 
 * 상품, 회원, 리뷰를 탭으로 나누어 한 페이지에서 관리
-* 검색, 페이지네이션 기능
+* **검색, 페이지네이션** 기능
 * 상품 등록 가능
 <br/><br/>
 <br/><br/>
