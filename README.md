@@ -15,7 +15,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 
 > **기간** &nbsp;&nbsp; 22/10 ~ 22/12 *(9주)*
 
-> **인원** &nbsp;&nbsp; 2명
+> **인원** &nbsp;&nbsp; 이현수(Front-End), 황은서(Back-End)
 
 > **나의 역할**
 
@@ -45,7 +45,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 * 페이지네이션 대신, **무한 스크롤** 사용
 * **sessionStorage**를 사용하여, 최근 본 상품 구현
 * 탭, 검색 기능
-<br/><br/>
+<br/><br/><br/>
 
 
 > **회원가입, 로그인**
@@ -56,29 +56,26 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 
 * **주소 api** 사용
 * 핸드폰 번호 입력 시, **자동 하이픈**('-') 추가
-<br/><br/>
+<br/><br/><br/>
 
 
------------------------------------------------------
 > **상품 상세 화면**
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210947391-ed0be725-29af-4a44-9f81-10927305792d.png" width="100%"></p>
 
 * 상품 상세 화면에서 바로 구매, 장바구니 추가
-* **리뷰 이미지 업로드**는 Form-Data로 처리
-<br/><br/>
+* **리뷰 이미지 업로드**는 EC2 로컬에 업로드 처리
+<br/><br/><br/>
 
 
------------------------------------------------------
 > **장바구니**
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210952073-f5917216-031c-4160-b024-75edae20242c.png" width="100%"></p>
 
 * **Redux**를 사용하여, 장바구니 데이터 관리
-<br/><br/>
+<br/><br/><br/>
 
 
------------------------------------------------------
 > **주문서 & 주문 내역**
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210974496-fb5cd48a-50ea-4166-b5a8-f811f7e6d72f.png" width="100%"></p>
@@ -86,10 +83,9 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210952158-099df9d6-60f8-469d-b05f-6cc10517200c.png" width="100%"></p>
 
 * **결제 api** 사용
-<br/><br/>
+<br/><br/><br/>
 
 
------------------------------------------------------
 > **관리자 페이지**
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210952323-9244ddb3-8fe1-4b67-97e5-422fd482f303.png" width="100%"></p>
@@ -106,7 +102,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <img src="https://user-images.githubusercontent.com/112552585/210970387-eca47bd5-a074-4936-aec6-e9370196ca2d.PNG" width=100%"></p>
 
 
-## 💭 느낀점
+## 💭 회고
 
 #### 아쉬운 부분
 
@@ -114,4 +110,18 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 * JWT 대신 Session만을 사용
 * 스토리지 서버로, S3 대신 EC2에 로컬에 파일을 업로드
 
-#### 배운 점
+#### 느낀 점
+
+프로젝트를 백엔드 자바반에서 진행을 했다.
+이전까지 jsp 페이지를 반환하는 방법을 학습하고 프로젝트로 만들다가,
+앞단에 대한 관심으로 리액트 사용을 믿어준 팀원분과 팀을 꾸리게 되었다.
+더욱 책임감이 생겼다. 하지만 모든 영역이 새로웠다.
+리액트를 학습하면서, 프로젝트를 진행해야 했고,
+rest api, 파일 업로드, 사용자 유효성 세션처리, aws 서버 배포, 코드를 다시 리팩토링,
+많은 관문이 있었는데 커뮤니티에 ,
+잘 진행한 것 같다. 다만 2개월이라는 짧은 시간동안 쇼핑몰에 관한 모든 것을 커버하느라 넓은 영역을 얕게 구현한 것 같다.
+발표라는 
+도입하고 싶은 기술이 있어도, 뒷단과 맞춰야 하는 부분? 이번에는 jwt가 그랬다.
+깊은 프로젝트를 경험하고 싶은 개
+프로젝트 기간 동안 리액트 학습을 시작해2
+커뮤니케이션도 학원에서는 정말 많은 
