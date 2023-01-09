@@ -97,11 +97,14 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 <br/>
 
 
+
 # 📋 ERD
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112552585/210970387-eca47bd5-a074-4936-aec6-e9370196ca2d.PNG" width="80%"></p>
 <br/><br/>
-                                                                                                                             
+
+
+
 # 💭 회고
 
 #### 아쉬운 부분
@@ -109,6 +112,7 @@ http://13.124.91.28/  &nbsp;&nbsp;-&nbsp;&nbsp;  관리자 `ID : admin` `PW : ad
 * 반응형 디자인을 고려하지 못하고, 웹 기준으로만 제작
 * JWT 대신 Session만을 사용
 * 스토리지 서버로, S3 대신 EC2에 로컬에 파일을 업로드
+</
 
 #### 느낀 점
 
