@@ -4,7 +4,7 @@
 
 > **서비스 주소**
 
-http://13.124.91.28/ &nbsp;&nbsp;-&nbsp;&nbsp;크롬 브라우저에서의 실행을 권장합니다.  
+~~http://13.124.91.28/ &nbsp;&nbsp;-&nbsp;&nbsp;크롬 브라우저에서의 실행을 권장합니다.~~ (현재 EC2 인스턴스가 만료되었습니다.)
 관리자 &nbsp;`ID : admin` &nbsp;`PW : realadmin`  
 <br>
 
